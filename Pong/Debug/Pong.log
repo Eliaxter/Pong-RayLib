@@ -1,0 +1,20 @@
+﻿  Source.cpp
+c:\users\administrador\desktop\pong\pong\source.cpp(169): warning C4013: 'rand' sin definir; se supone que extern devuelve como resultado int
+c:\users\administrador\desktop\pong\pong\source.cpp(178): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(181): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(186): warning C4244: '=': conversión de 'const int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(187): warning C4244: '=': conversión de 'const int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(193): warning C4244: '=': conversión de 'const int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(194): warning C4244: '=': conversión de 'const int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(200): warning C4244: '=': conversión de 'const int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(201): warning C4244: '=': conversión de 'const int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(225): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(226): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(227): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(228): warning C4244: 'función': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(265): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(278): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(291): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong\pong\source.cpp(305): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+  LINK : no se encontró C:\Users\Administrador\Desktop\Pong\Debug\Pong.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  Pong.vcxproj -> C:\Users\Administrador\Desktop\Pong\Debug\Pong.exe
