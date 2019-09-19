@@ -4,10 +4,42 @@
     <Filter Include="Codigo Fuente">
       <UniqueIdentifier>{0132418a-79fe-4a44-b9de-c9bfed23695e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{080a4b78-b1da-44f2-9acc-845cb4dacc31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="filescode">
+      <UniqueIdentifier>{27b73e05-361b-468f-8fcf-8ef08934f62b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp">
       <Filter>Codigo Fuente</Filter>
     </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="Palette.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ball.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Palette.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay.h">
+      <Filter>headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

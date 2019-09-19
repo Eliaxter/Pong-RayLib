@@ -20,6 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="Palette.cpp" />
+    <ClCompile Include="Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="Palette.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
