@@ -1,0 +1,12 @@
+#pragma once
+#include "raylib.h"
+#include "Ball.h"
+#include "Collision.h"
+#include "Game.h"
+#include "Gameplay.h"
+#include "Image.h"
+#include "Palette.h"
+#include "Texture.h"
+#include "Initialize.h"
+#include <stdlib.h>
+#include <time.h>

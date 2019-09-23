@@ -15,30 +15,54 @@
     <ClCompile Include="..\src\Source.cpp">
       <Filter>Codigo Fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Ball.cpp">
+    <ClCompile Include="..\src\codefiles\Ball.cpp">
       <Filter>filescode</Filter>
     </ClCompile>
-    <ClCompile Include="Palette.cpp">
+    <ClCompile Include="..\src\codefiles\Collision.cpp">
       <Filter>filescode</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="..\src\codefiles\Game.cpp">
       <Filter>filescode</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay.cpp">
+    <ClCompile Include="..\src\codefiles\Gameplay.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\codefiles\Image.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\codefiles\Palette.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\codefiles\Texture.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\codefiles\Initialize.cpp">
       <Filter>filescode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ball.h">
+    <ClInclude Include="..\src\headers\Ball.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="Palette.h">
+    <ClInclude Include="..\src\headers\Collision.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="..\src\headers\Game.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay.h">
+    <ClInclude Include="..\src\headers\Gameplay.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\Image.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\Palette.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\Texture.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\Initialize.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

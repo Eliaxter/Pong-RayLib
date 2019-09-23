@@ -1,20 +1,6 @@
-#include "raylib.h"
-#include <stdlib.h>
-#include <time.h>
+#include "headers/Game.h"
 //Screen
-const int screenWidth = 800; //gameplay
-const int screenHeight = 450; //gameplay
-const int minScreenW = 0; //gameplay
-const int minScreenH = 0; //gameplay
-const int screenBorderX = -2; //gameplay
-const int halfScreenWidth = 402; //gameplay
-const int halfScreenHeight = 227; //gameplay
-const int halfNegativeScreenWidth = 398; //gameplay
-const int halfNegativeScreenHeight = 223; //gameplay
-const int randomPowerUPW1 = 30; //gameplay
-const int randomPowerUPW2 = 770; //gameplay
-const int randomPowerUPH1 = 30; //gameplay
-const int randomPowerUPH2 = 420; //gameplay
+
 //Players
 Rectangle player1; //palette
 Rectangle player2; //palette
@@ -25,38 +11,19 @@ const int player1Y = 200; //palette
 const int player2X = 747; //palette
 const int player2Y = 200; //pàlette
 
-const int minSpeedBall = 6; //ball
-const int maxSpeedBall = 7; //ball
-int initialRadius = 20; //ball
-int ballRadius = 20; //ball
-int powerBallRadius = 15; //ball
-int randBallPosition; //ball
-Vector2 ballPosition; //ball
-Vector2 ballSpeed; //ball
-Vector2 powerBall; //ball
-
 Texture2D p1; //texture
 Texture2D p2; //texture
 
-const int startPoints = 0; //gameplay
-const int winPoints = 4; //gameplay
-int pointsP1; //gameplay
-int pointsP2; //gameplay
-int player1Wins; //gameplay
-int player2Wins; //gameplay
-int games; //gameplay
-int gamesToWin = 3; //gameplay
-int incrementGames = 1; //gameplay
-int initialGames = 0; //gameplay
+
 
 int sizeColors = 5; //ball
 Color colors[8]; //ball
 Color colorBall; //ball
 
-bool stateGame = true;
-bool stateMenu = true;
-bool stateEndMenu = true;
-bool AI = true;
+bool stateGame = true; //Game
+bool stateMenu = true; //Game
+bool stateEndMenu = true; //Game
+bool AI = true; //Game
 
 Image bgImage; //image
 Texture bgTexture; //texture
@@ -70,12 +37,8 @@ Texture texturePlayer2; //texture
 Music bgMusic; //music
 Sound collisionWave; //sound
 
-const int dontCheckCollisionFrames = 10; //collision
 
-bool previusFrameCollisionP1 = false; //collision
-int lastCollisionFramesP1 = 0; //collision
-bool previusFrameCollisionP2 = false; //collision
-int lastCollisionFramesP2 = 0; //collision
+
 
 void InitializeGame(); //initialize
 void Menu(); //menu
@@ -84,14 +47,13 @@ void Game(); //Game
 
 int main(void)
 {
-	srand(time(NULL));
 	//-----------Initialize--------------
+	srand(time(NULL));
 	InitWindow(screenWidth, screenHeight, "Pong Elias");
 	InitAudioDevice();
 	bgMusic = LoadMusicStream("sounds/background-music.ogg");
 	collisionWave = LoadSound("sounds/dung.wav");
 	//-----------Initialize--------------
-
 
 	while (true) //Game Loop
 	{
@@ -99,13 +61,11 @@ int main(void)
 		{
 			Menu();
 		}
-		// Main game loop
 		while (stateGame == true)
 		{
 			Game();
 			if (IsKeyDown(KEY_ESCAPE))
 				stateGame = false;
-			//----------------------------------------------------------------------------------
 		}
 		while (stateEndMenu == true)
 		{
@@ -209,45 +169,14 @@ void InitializeGame() //initialize
 	bgTexture = LoadTextureFromImage(bgImage);
 	UnloadImage(bgImage);
 }
-void Game()
+void Game() //Gameplay
 {
-	// Update
-	//----------------------------------------------------------------------------------
-	UpdateMusicStream(bgMusic);
-	if (IsKeyDown(KEY_W)) player1.y -= 5.0f;
-	if (IsKeyDown(KEY_S)) player1.y += 5.0f;
-	player2.y = ballPosition.y - 50;
-	//if (IsKeyDown(KEY_UP)) player2.y -= 5.0f;
-	//if (IsKeyDown(KEY_DOWN)) player2.y += 5.0f;
-	//----------------------------------------------------------------------------------
-	// Draw
-	//----------------------------------------------------------------------------------
-	BeginDrawing();
-	ClearBackground(BLACK);
-	DrawTexture(bgTexture, 0, 0, WHITE);
-	DrawText(TextFormat("Player 1: %i", pointsP1), 10, 10, 20, BLACK);
-	DrawText(TextFormat("Games: %i", games), 400, 10, 20, BLACK);
-	DrawText(TextFormat("Player 2: %i", pointsP2), 650, 10, 20, BLACK);
-	DrawCircleV(ballPosition, ballRadius, colorBall);
-	DrawCircleV(powerBall, powerBallRadius, WHITE);
-	DrawTexture(p1, player1.x, player1.y, WHITE);
-	DrawTexture(p2, player2.x, player2.y, WHITE);
-	PlayMusicStream(bgMusic);
-	//Conditions
-	switch (randBallPosition) //ball
-	{
-	case 0:
-		ballPosition.x += ballSpeed.x;
-		ballPosition.y -= ballSpeed.y;
-		break;
-	case 1:
-		ballPosition.x -= ballSpeed.x;
-		ballPosition.y += ballSpeed.y;
-		break;
-	}
-	//Player 1
+	
+	//Actualizar la funcion gameplay a medida que agregamos funciones
 
-	if (previusFrameCollisionP1) //collisions
+	
+
+	if (previusFrameCollisionP1) //collisions Player 1
 	{
 		lastCollisionFramesP1++;
 		if (lastCollisionFramesP1 >= dontCheckCollisionFrames)
@@ -258,7 +187,7 @@ void Game()
 	}
 
 
-	if (previusFrameCollisionP2) //collisions
+	if (previusFrameCollisionP2) //collisions Player 2
 	{
 		lastCollisionFramesP2++;
 		if (lastCollisionFramesP2 >= dontCheckCollisionFrames)
@@ -268,7 +197,7 @@ void Game()
 		}
 	}
 
-	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1)) //collisions
+	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1)) //collisions Player 1
 	{
 		if (!previusFrameCollisionP1)
 		{
@@ -281,7 +210,7 @@ void Game()
 		
 	}
 	//Player 2
-	if (CheckCollisionCircleRec(ballPosition, ballRadius, player2)) //collisions
+	if (CheckCollisionCircleRec(ballPosition, ballRadius, player2)) //collisions Player 2
 	{
 
 		if (!previusFrameCollisionP2)
@@ -294,28 +223,8 @@ void Game()
 
 		}
 	}
-	//----------Collisions------------
-	if (CheckCollisionCircles(ballPosition, ballRadius, powerBall, powerBallRadius)) //collisions
-	{
-		ballRadius = 40;
-		if (ballPosition.x > halfScreenWidth)
-		{
-			pointsP1 += 2;
-		}
-		if (ballPosition.x < halfNegativeScreenWidth)
-		{
-			pointsP2 += 2;
-		}
-		powerBall.x = -500;
-		powerBall.y = -500;
-	}
-	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1) == 3 || CheckCollisionCircleRec(ballPosition, ballRadius, player2) == 3)
-		ballRadius = initialRadius;
-	//----------Collisions------------
-	//----------Ball Collisions------------
-	//Walls
-	if ((ballPosition.y >= (screenHeight - ballRadius)) || (ballPosition.y <= ballRadius)) ballSpeed.y *= -1.0f;
-
+	//----------Player Points------------
+	//----points----
 	if (ballPosition.x > screenWidth)
 	{
 		ballPosition.x = (float)screenWidth / 2;
@@ -330,17 +239,8 @@ void Game()
 		pointsP2++;
 		colorBall = WHITE;
 	}
+	
 
-	if (player1.y + player1.height > screenHeight)
-		player1.y = screenHeight - player1.height;
-	if (player1.y < minScreenH)
-		player1.y = 0;
-	if (player2.y + player2.height > screenHeight)
-		player2.y = screenHeight - player2.height;	
-	if (player2.y < minScreenH)
-		player2.y = 0;
-	//----------Ball Collisions------------
-	//----------Player Points------------
 	if (pointsP1 >= winPoints)
 	{
 		games += incrementGames;
@@ -361,6 +261,7 @@ void Game()
 		stateEndMenu = true;
 	}
 	//----------Player Points------------
+	//----points----
 	EndDrawing();
 }
 void FinalMenu() //Final Menu

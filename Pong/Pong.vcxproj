@@ -19,17 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\codefiles\Ball.cpp" />
+    <ClCompile Include="..\src\codefiles\Collision.cpp" />
+    <ClCompile Include="..\src\codefiles\Game.cpp" />
+    <ClCompile Include="..\src\codefiles\Gameplay.cpp" />
+    <ClCompile Include="..\src\codefiles\Image.cpp" />
+    <ClCompile Include="..\src\codefiles\Initialize.cpp" />
+    <ClCompile Include="..\src\codefiles\Palette.cpp" />
+    <ClCompile Include="..\src\codefiles\Texture.cpp" />
     <ClCompile Include="..\src\Source.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Gameplay.cpp" />
-    <ClCompile Include="Palette.cpp" />
-    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="Gameplay.h" />
-    <ClInclude Include="Palette.h" />
-    <ClInclude Include="Texture.h" />
+    <ClInclude Include="..\src\headers\Ball.h" />
+    <ClInclude Include="..\src\headers\Collision.h" />
+    <ClInclude Include="..\src\headers\Game.h" />
+    <ClInclude Include="..\src\headers\Gameplay.h" />
+    <ClInclude Include="..\src\headers\Image.h" />
+    <ClInclude Include="..\src\headers\Initialize.h" />
+    <ClInclude Include="..\src\headers\Palette.h" />
+    <ClInclude Include="..\src\headers\Texture.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
