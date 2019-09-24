@@ -1,4 +1,17 @@
-#include "../headers/Game.h"
+#include "../headers/Collision.h"
+
+#include "raylib.h"
+
+#include "../headers/Gameplay.h"
+#include "../headers/Ball.h"
+#include "../headers/Palette.h"
+
+/*
+Rectangle player1;
+Rectangle player2;
+Vector2 ballPosition;
+Vector2 ballSpeed;
+*/
 
 const int dontCheckCollisionFrames = 10; //collision
 bool previusFrameCollisionP1 = false; //collision

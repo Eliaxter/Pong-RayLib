@@ -1,10 +1,19 @@
-#include "../headers/Game.h"
+#include "../headers/Ball.h"
+
+#include <iostream>
+#include <time.h>
+
+#include "raylib.h"
+
+#include "../headers/Gameplay.h"
+#include "../headers/Palette.h"
+
 
 const int minSpeedBall = 6; //ball
 const int maxSpeedBall = 7; //ball
-const int initialRadius = 20; //ball
-const int ballRadius = 20; //ball
-const int powerBallRadius = 15; //ball
+int initialRadius = 20; //ball
+int ballRadius = 20; //ball
+int powerBallRadius = 15; //ball
 int randBallPosition; //ball
 Vector2 ballPosition; //ball
 Vector2 ballSpeed; //ball
@@ -49,3 +58,47 @@ void CollisionPowerBall()
 		ballRadius = initialRadius;
 }
 
+void ColorBall()
+{
+	//------color-------
+	colorBall = WHITE;
+	colors[0] = BLUE;
+	colors[1] = RED;
+	colors[2] = GREEN;
+	colors[3] = YELLOW;
+	colors[4] = PURPLE;
+	colors[5] = GOLD;
+	colors[6] = VIOLET;
+	colors[7] = DARKBROWN;
+	//-------color-------
+}
+
+void InitBall() 
+{
+	//-------initBall---------
+	randBallPosition = rand() % 2;
+
+	ballPosition.x = (float)screenWidth / 2;
+	ballPosition.y = (float)screenHeight / 2;
+	ballSpeed.x = 0;
+	ballSpeed.y = 0;
+	//--------initBall-----------
+}
+
+void InitPowerUp()
+{
+	//--------initPowerUp---------
+	int random1 = 0;
+	random1 = GetRandomValue(randomPowerUPW1, randomPowerUPW2);
+	powerBall.x = random1;
+	int random2 = 0;
+	random2 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
+	powerBall.y = random2;
+	//--------initPowerUp---------
+}
+
+void RandomBallSpeed() 
+{
+	ballSpeed.x = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall); //ball
+	ballSpeed.y = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall); //ball
+}

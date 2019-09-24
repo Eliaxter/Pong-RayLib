@@ -39,6 +39,15 @@
     <ClCompile Include="..\src\codefiles\Initialize.cpp">
       <Filter>filescode</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\codefiles\DeInit.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\codefiles\FinalMenu.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\codefiles\Menu.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\headers\Ball.h">
@@ -63,6 +72,15 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\headers\Initialize.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\DeInit.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\FinalMenu.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\headers\Menu.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,4 @@
 #pragma once
-#include "raylib.h"
 
 extern const int dontCheckCollisionFrames; //collision
 extern bool previusFrameCollisionP1; //collision

@@ -1,4 +1,6 @@
-#include "../headers/Game.h"
+#include "raylib.h"
+#include "../headers/Palette.h"
+#include "../headers/Ball.h"
 
 const int screenWidth = 800; //gameplay
 const int screenHeight = 450; //gameplay
@@ -24,6 +26,10 @@ int games; //gameplay
 int gamesToWin = 3; //gameplay
 int incrementGames = 1; //gameplay
 int initialGames = 0; //gameplay
+
+Music bgMusic; //music
+Sound collisionWave; //sound
+
 
 void Game() 
 {
@@ -51,4 +57,8 @@ void Game()
 	PlayMusicStream(bgMusic);
 	//Conditions
 	//-----------------------Resto de Funciones------------------------------------------
+	CollisionPlayerWithBall();
+	PlayerGetPoints();
+	PlayerPointsConditions();
+	EndDrawing();
 }

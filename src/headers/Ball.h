@@ -3,9 +3,9 @@
 
 extern const int minSpeedBall; //ball
 extern const int maxSpeedBall; //ball
-extern const int initialRadius; //ball
-extern const int ballRadius; //ball
-extern const int powerBallRadius; //ball
+extern int initialRadius; //ball
+extern int ballRadius; //ball
+extern int powerBallRadius; //ball
 extern int randBallPosition; //ball
 extern Vector2 ballPosition; //ball
 extern Vector2 ballSpeed; //ball
@@ -17,3 +17,7 @@ extern Color colorBall; //ball
 
 void RandomBallPos();
 void CollisionPowerBall();
+void ColorBall();
+void InitBall();
+void InitPowerUp();
+void RandomBallSpeed();
