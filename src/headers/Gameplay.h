@@ -2,34 +2,36 @@
 #define GAMEPLAY_H
 #include "raylib.h"
 
-extern const int screenWidth; //gameplay
-extern const int screenHeight; //gameplay
-extern const int minScreenW; //gameplay
-extern const int minScreenH; //gameplay
-extern const int screenBorderX; //gameplay
-extern const int halfScreenWidth; //gameplay
-extern const int halfScreenHeight; //gameplay
-extern const int halfNegativeScreenWidth; //gameplay
-extern const int halfNegativeScreenHeight; //gameplay
-extern const int randomPowerUPW1; //gameplay
-extern const int randomPowerUPW2; //gameplay
-extern const int randomPowerUPH1; //gameplay
-extern const int randomPowerUPH2; //gameplay
+extern const int screenWidth;
+extern const int screenHeight;
+extern const int minScreenW;
+extern const int minScreenH; 
+extern const int screenBorderX;
+extern const int halfScreenWidth;
+extern const int halfScreenHeight;
+extern const int halfNegativeScreenWidth;
+extern const int halfNegativeScreenHeight; 
+extern const int randomPowerUPW1;
+extern const int randomPowerUPW2;
+extern const int randomPowerUPH1; 
+extern const int randomPowerUPH2;
 
-extern const int startPoints; //gameplay
-extern const int winPoints; //gameplay
-extern int pointsP1; //gameplay
-extern int pointsP2; //gameplay
-extern int player1Wins; //gameplay
-extern int player2Wins; //gameplay
-extern int games; //gameplay
-extern int gamesToWin; //gameplay
-extern int incrementGames; //gameplay
-extern int initialGames; //gameplay
+extern const int startPoints;
+extern const int winPoints;
+extern int pointsP1;
+extern int pointsP2;
+extern int player1Wins;
+extern int player2Wins;
+extern int games;
+extern int gamesToWin;
+extern int incrementGames;
+extern int initialGames;
 
 extern Music bgMusic;
 extern Sound collisionWave;
 
-void Game();
+void Update();
+void Draw();
+void Input();
 
 #endif

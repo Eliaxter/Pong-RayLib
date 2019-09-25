@@ -32,18 +32,22 @@ int gamesToWin = 3;
 int incrementGames = 1;
 int initialGames = 0;
 
-void Game() 
+void Update() 
 {
 	MoveBall();
 	UpdateMusicStream(bgMusic);
 	WindowCollision();
 	WindowLimits();
 	CollisionPowerBall();
-	if (IsKeyDown(KEY_W)) player1.y -= 5.0f;
-	if (IsKeyDown(KEY_S)) player1.y += 5.0f;
-	player2.y = ballPosition.y - 50;
-	//if (IsKeyDown(KEY_UP)) player2.y -= 5.0f;
-	//if (IsKeyDown(KEY_DOWN)) player2.y += 5.0f;
+	PlayMusicStream(bgMusic);
+	CollisionPlayerWithBall();
+	PlayerGetPoints();
+	PlayerPointsConditions();
+	EndDrawing();
+}
+
+void Draw() 
+{
 	BeginDrawing();
 	ClearBackground(BLACK);
 	DrawTexture(bgTexture, 0, 0, WHITE);
@@ -54,12 +58,13 @@ void Game()
 	DrawCircleV(powerBall, powerBallRadius, WHITE);
 	DrawTexture(p1, player1.x, player1.y, WHITE);
 	DrawTexture(p2, player2.x, player2.y, WHITE);
-	PlayMusicStream(bgMusic);
-	
-	//Conditions
-	//-----------------------Resto de Funciones------------------------------------------
-	CollisionPlayerWithBall();
-	PlayerGetPoints();
-	PlayerPointsConditions();
-	EndDrawing();
+}
+
+void Input() 
+{
+	if (IsKeyDown(KEY_W)) player1.y -= 5.0f; //input
+	if (IsKeyDown(KEY_S)) player1.y += 5.0f; //input
+	//player2.y = ballPosition.y - 50;
+	if (IsKeyDown(KEY_UP)) player2.y -= 5.0f;
+	if (IsKeyDown(KEY_DOWN)) player2.y += 5.0f;
 }

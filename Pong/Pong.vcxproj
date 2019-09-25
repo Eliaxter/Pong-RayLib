@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="..\src\codefiles\Ball.cpp" />
     <ClCompile Include="..\src\codefiles\Collision.cpp" />
-    <ClCompile Include="..\src\codefiles\DeInit.cpp" />
     <ClCompile Include="..\src\codefiles\FinalMenu.cpp" />
     <ClCompile Include="..\src\codefiles\Game.cpp" />
     <ClCompile Include="..\src\codefiles\Gameplay.cpp" />
@@ -30,12 +29,12 @@
     <ClCompile Include="..\src\codefiles\Menu.cpp" />
     <ClCompile Include="..\src\codefiles\Palette.cpp" />
     <ClCompile Include="..\src\codefiles\Texture.cpp" />
-    <ClCompile Include="..\src\Source.cpp" />
+    <ClCompile Include="..\src\codefiles\Unload.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\headers\Ball.h" />
     <ClInclude Include="..\src\headers\Collision.h" />
-    <ClInclude Include="..\src\headers\DeInit.h" />
     <ClInclude Include="..\src\headers\FinalMenu.h" />
     <ClInclude Include="..\src\headers\Game.h" />
     <ClInclude Include="..\src\headers\Gameplay.h" />
@@ -44,6 +43,7 @@
     <ClInclude Include="..\src\headers\Menu.h" />
     <ClInclude Include="..\src\headers\Palette.h" />
     <ClInclude Include="..\src\headers\Texture.h" />
+    <ClInclude Include="..\src\headers\Unload.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -110,7 +110,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;$(SolutionDir)src\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;$(SolutionDir)src\GameObjects;$(SolutionDir)src\Menues;$(SolutionDir)src\Game;$(SolutionDir)src\Visuals;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GRAPHICS_API_OPENGL_33;PLATFORM_DESKTOP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>Default</CompileAs>
     </ClCompile>
@@ -135,9 +135,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;$(SolutionDir)src\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;$(SolutionDir)src\GameObjects;$(SolutionDir)src\Menues;$(SolutionDir)src\Game;$(SolutionDir)src\Visuals;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GRAPHICS_API_OPENGL_33;PLATFORM_DESKTOP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <CompileAs>CompileAsC</CompileAs>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

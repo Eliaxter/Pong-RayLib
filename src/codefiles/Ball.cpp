@@ -50,7 +50,7 @@ void CollisionPowerBall()
 void ColorBall()
 {
 	colorBall = WHITE;
-	colors[0] = BLUE;
+	colors[0] = BLACK;
 	colors[1] = RED;
 	colors[2] = GREEN;
 	colors[3] = YELLOW;

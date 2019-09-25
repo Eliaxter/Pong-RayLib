@@ -6,7 +6,7 @@
 #include "../headers/Ball.h"
 #include "../headers/Palette.h"
 
-const int dontCheckCollisionFrames = 10; //collision
+const int dontCheckCollisionFrames = 10;
 bool previusFrameCollisionP1 = false; //collision
 int lastCollisionFramesP1 = 0; //collision
 bool previusFrameCollisionP2 = false; //collision

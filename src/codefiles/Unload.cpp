@@ -1,4 +1,4 @@
-#include "../headers/DeInit.h"
+#include "../headers/Unload.h"
 
 #include "raylib.h"
 
@@ -7,7 +7,7 @@
 Music bgMusic;
 Sound collisionWave;
 
-void DeInit() 
+void Unload() 
 {
 	UnloadSound(collisionWave);
 	UnloadMusicStream(bgMusic);
