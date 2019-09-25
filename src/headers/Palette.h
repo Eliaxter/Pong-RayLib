@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PALETTE_H
+#define PALETTE_H
 #include "raylib.h"
 
 extern Rectangle player1;
@@ -15,3 +16,5 @@ void CollisionPlayerWithBall();
 void PlayerGetPoints();
 void PlayerPointsConditions();
 void CheckPlayerWins();
+
+#endif

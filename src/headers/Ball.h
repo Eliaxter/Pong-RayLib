@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BALL_H
+#define BALL_H
 #include "raylib.h"
 
 extern const int minSpeedBall;
@@ -21,3 +22,5 @@ void InitBall();
 void InitPowerUp();
 void RandomBallSpeed();
 void MoveBall();
+
+#endif

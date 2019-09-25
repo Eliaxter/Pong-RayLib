@@ -1,4 +1,5 @@
-#pragma once
+#ifndef COLLISION_H
+#define COLLISION_H
 
 extern const int dontCheckCollisionFrames;
 extern bool previusFrameCollisionP1;
@@ -8,3 +9,5 @@ extern int lastCollisionFramesP2 ;
 
 void WindowCollision();
 void WindowLimits();
+
+#endif

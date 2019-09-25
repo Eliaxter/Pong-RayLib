@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAMEPLAY_H
+#define GAMEPLAY_H
 #include "raylib.h"
 
 extern const int screenWidth; //gameplay
@@ -30,3 +31,5 @@ extern Music bgMusic;
 extern Sound collisionWave;
 
 void Game();
+
+#endif

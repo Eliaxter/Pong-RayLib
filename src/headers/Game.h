@@ -1,8 +1,11 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 
-extern bool stateGame; //Game
-extern bool stateMenu; //Game
-extern bool stateEndMenu; //Game
-extern bool AI; //Game
+extern bool stateGame;
+extern bool stateMenu;
+extern bool stateEndMenu;
+extern bool AI;
 
 void GameLoop();
+
+#endif
