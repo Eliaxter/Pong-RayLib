@@ -7,39 +7,25 @@
 
 #include "../headers/Gameplay.h"
 #include "../headers/Palette.h"
+#include "../headers/Collision.h"
 
 
-const int minSpeedBall = 6; //ball
-const int maxSpeedBall = 7; //ball
-float initialRadius = 20; //ball
-float ballRadius = 20; //ball
-float powerBallRadius = 15; //ball
-int randBallPosition; //ball
-Vector2 ballPosition; //ball
-Vector2 ballSpeed; //ball
-Vector2 powerBall; //ball
+const int minSpeedBall = 6;
+const int maxSpeedBall = 7;
+float initialRadius = 20;
+float ballRadius = 20;
+float powerBallRadius = 15;
+int randBallPosition;
+Vector2 ballPosition;
+Vector2 ballSpeed;
+Vector2 powerBall;
 
-int sizeColors = 5; //ball
-Color colors[8]; //ball
-Color colorBall; //ball
+int sizeColors = 5;
+Color colors[8];
+Color colorBall;
 
 Rectangle player1;
 Rectangle player2;
-
-void RandomBallPos()
-{
-	switch (randBallPosition) //ball
-	{
-	case 0:
-		ballPosition.x += ballSpeed.x;
-		ballPosition.y -= ballSpeed.y;
-		break;
-	case 1:
-		ballPosition.x -= ballSpeed.x;
-		ballPosition.y += ballSpeed.y;
-		break;
-	}
-}
 
 void CollisionPowerBall() 
 {
@@ -63,7 +49,6 @@ void CollisionPowerBall()
 
 void ColorBall()
 {
-	//------color-------
 	colorBall = WHITE;
 	colors[0] = BLUE;
 	colors[1] = RED;
@@ -73,35 +58,37 @@ void ColorBall()
 	colors[5] = GOLD;
 	colors[6] = VIOLET;
 	colors[7] = DARKBROWN;
-	//-------color-------
 }
 
 void InitBall() 
 {
-	//-------initBall---------
 	randBallPosition = rand() % 2;
 
 	ballPosition.x = (float)screenWidth / 2;
 	ballPosition.y = (float)screenHeight / 2;
 	ballSpeed.x = 0;
 	ballSpeed.y = 0;
-	//--------initBall-----------
 }
 
 void InitPowerUp()
 {
-	//--------initPowerUp---------
 	int random1 = 0;
 	random1 = GetRandomValue(randomPowerUPW1, randomPowerUPW2);
 	powerBall.x = random1;
 	int random2 = 0;
 	random2 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
 	powerBall.y = random2;
-	//--------initPowerUp---------
 }
 
 void RandomBallSpeed() 
 {
-	ballSpeed.x = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall); //ball
-	ballSpeed.y = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall); //ball
+	ballSpeed.x = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall);
+	ballSpeed.y = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall);
+}
+
+void MoveBall()
+{
+	ballPosition.x += ballSpeed.x;
+	ballPosition.y -= ballSpeed.y;
+
 }

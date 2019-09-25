@@ -6,13 +6,6 @@
 #include "../headers/Ball.h"
 #include "../headers/Palette.h"
 
-/*
-Rectangle player1;
-Rectangle player2;
-Vector2 ballPosition;
-Vector2 ballSpeed;
-*/
-
 const int dontCheckCollisionFrames = 10; //collision
 bool previusFrameCollisionP1 = false; //collision
 int lastCollisionFramesP1 = 0; //collision
@@ -29,7 +22,6 @@ void WindowCollision()
 
 void WindowLimits() 
 {
-	//--Limits--
 	if (player1.y + player1.height > screenHeight)
 	{
 		player1.y = screenHeight - player1.height;
@@ -37,7 +29,6 @@ void WindowLimits()
 	if (player1.y < minScreenH)
 	{
 		player1.y = 0;
-
 	}
 	if (player2.y + player2.height > screenHeight)
 	{

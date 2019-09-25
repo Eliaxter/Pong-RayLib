@@ -6,10 +6,6 @@
 #include "../headers/Gameplay.h"
 #include "../headers/Palette.h"
 
-//Music bgMusic; //music
-//Sound collisionWave; //sound
-
-
 void FinalMenu()
 {
 	BeginDrawing();
@@ -43,7 +39,6 @@ void FinalMenu()
 		stateMenu = false;
 		stateGame = false;
 		stateEndMenu = false;
-		CloseWindow();
 	}
 	EndDrawing();
 }

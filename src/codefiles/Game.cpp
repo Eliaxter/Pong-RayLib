@@ -8,10 +8,10 @@
 #include "../headers/FinalMenu.h"
 #include "../headers/DeInit.h"
 
-bool stateGame = true; //Game
-bool stateMenu = true; //Game
-bool stateEndMenu = true; //Game
-bool AI; //Game
+bool stateGame = true;
+bool stateMenu = true;
+bool stateEndMenu = true;
+bool AI;
 
 void GameLoop() 
 {

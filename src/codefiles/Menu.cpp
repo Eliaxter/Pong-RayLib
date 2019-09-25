@@ -4,16 +4,15 @@
 
 #include "../headers/Palette.h"
 #include "../headers/Gameplay.h"
+#include "../headers/Initialize.h"
 
-//Music bgMusic; //music
-//Sound collisionWave; //sound
-
-void Menu() //Menu
+void Menu()
 {
+	/*
 	if (!IsMusicPlaying(bgMusic))
 	{
 		PlayMusicStream(bgMusic);
-	}
+	}*/
 
 	BeginDrawing();
 	ClearBackground(BLACK);
@@ -23,6 +22,7 @@ void Menu() //Menu
 	if (IsKeyDown(KEY_ENTER))
 	{
 		InitPlayerPointsMenu();
+		InitializeGame();
 	}
 	EndDrawing();
 }

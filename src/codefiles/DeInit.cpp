@@ -4,11 +4,12 @@
 
 #include "../headers/Gameplay.h"
 
-Music bgMusic; //music
-Sound collisionWave; //sound
+Music bgMusic;
+Sound collisionWave;
 
 void DeInit() 
 {
 	UnloadSound(collisionWave);
 	UnloadMusicStream(bgMusic);
+	CloseWindow();
 }

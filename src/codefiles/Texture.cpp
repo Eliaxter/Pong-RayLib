@@ -2,14 +2,14 @@
 
 #include "../headers/Image.h"
 
-Texture2D p1; //texture
-Texture2D p2; //texture
-Texture bgTexture; //texture
-Texture textureBall; //texture
-Texture texturePlayer1; //texture
-Texture texturePlayer2; //texture
+Texture2D p1;
+Texture2D p2;
+Texture bgTexture;
+Texture textureBall;
+Texture texturePlayer1;
+Texture texturePlayer2;
 
 void LoadTextureBG()
 {
-	bgTexture = LoadTextureFromImage(bgImage); //Texture
+	bgTexture = LoadTextureFromImage(bgImage);
 }
