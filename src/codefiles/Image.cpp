@@ -1,4 +1,4 @@
-#include "../headers/Game.h"
+#include "../headers/Image.h"
 
 Image bgImage; //image
 Image imgBall; //image

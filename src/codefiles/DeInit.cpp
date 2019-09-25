@@ -4,6 +4,9 @@
 
 #include "../headers/Gameplay.h"
 
+Music bgMusic; //music
+Sound collisionWave; //sound
+
 void DeInit() 
 {
 	UnloadSound(collisionWave);

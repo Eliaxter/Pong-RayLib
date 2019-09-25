@@ -1,4 +1,13 @@
+#include "../headers/FinalMenu.h"
+
+#include "raylib.h"
+
 #include "../headers/Game.h"
+#include "../headers/Gameplay.h"
+#include "../headers/Palette.h"
+
+Music bgMusic; //music
+Sound collisionWave; //sound
 
 void FinalMenu()
 {

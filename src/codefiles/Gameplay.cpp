@@ -1,6 +1,10 @@
+#include "../headers/Gameplay.h"
+
 #include "raylib.h"
+
 #include "../headers/Palette.h"
 #include "../headers/Ball.h"
+#include "../headers/Texture.h"
 
 const int screenWidth = 800; //gameplay
 const int screenHeight = 450; //gameplay

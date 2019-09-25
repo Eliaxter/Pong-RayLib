@@ -1,10 +1,15 @@
 #include "../headers/Palette.h"
 
-#include "../headers/Ball.h"
-
+#include <iostream>
 #include <time.h>
 
 #include "raylib.h"
+
+#include "../headers/Ball.h"
+#include "../headers/Collision.h"
+#include "../headers/Gameplay.h"
+#include "../headers/Initialize.h"
+#include "../headers/Texture.h"
 
 //Players
 Rectangle player1;

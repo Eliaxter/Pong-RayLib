@@ -1,4 +1,11 @@
-#include "../headers/Game.h"
+#include "../headers/Menu.h"
+
+#include "raylib.h"
+
+#include "../headers/Palette.h"
+
+Music bgMusic; //music
+Sound collisionWave; //sound
 
 void Menu() //Menu
 {
