@@ -3,9 +3,10 @@
 #include "raylib.h"
 
 #include "../headers/Palette.h"
+#include "../headers/Gameplay.h"
 
-Music bgMusic; //music
-Sound collisionWave; //sound
+//Music bgMusic; //music
+//Sound collisionWave; //sound
 
 void Menu() //Menu
 {

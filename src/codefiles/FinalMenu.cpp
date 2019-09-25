@@ -6,8 +6,9 @@
 #include "../headers/Gameplay.h"
 #include "../headers/Palette.h"
 
-Music bgMusic; //music
-Sound collisionWave; //sound
+//Music bgMusic; //music
+//Sound collisionWave; //sound
+
 
 void FinalMenu()
 {

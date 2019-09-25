@@ -10,6 +10,7 @@
 #include "../headers/Gameplay.h"
 #include "../headers/Initialize.h"
 #include "../headers/Texture.h"
+#include "../headers/Game.h"
 
 //Player1
 const int player1X = 2;
@@ -18,13 +19,8 @@ const int player1Y = 200;
 const int player2X = 747;
 const int player2Y = 200;
 
-Music bgMusic; //music
-Sound collisionWave; //sound
-
-bool stateGame = true; //Game
-bool stateMenu = true; //Game
-bool stateEndMenu = true; //Game
-bool AI = true; //Game
+//Music bgMusic; //music
+//Sound collisionWave; //sound
 
 void InitPlayers() 
 {

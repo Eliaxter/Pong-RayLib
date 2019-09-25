@@ -1,8 +1,8 @@
 #pragma once
 
-extern bool stateGame = true; //Game
-extern bool stateMenu = true; //Game
-extern bool stateEndMenu = true; //Game
-extern bool AI = true; //Game
+extern bool stateGame; //Game
+extern bool stateMenu; //Game
+extern bool stateEndMenu; //Game
+extern bool AI; //Game
 
 void GameLoop();

@@ -31,8 +31,8 @@ int gamesToWin = 3; //gameplay
 int incrementGames = 1; //gameplay
 int initialGames = 0; //gameplay
 
-Music bgMusic; //music
-Sound collisionWave; //sound
+//Music bgMusic; //music
+//Sound collisionWave; //sound
 
 
 void Game() 

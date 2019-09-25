@@ -1,4 +1,5 @@
 #pragma once
+#include "raylib.h"
 
 extern const int screenWidth; //gameplay
 extern const int screenHeight; //gameplay

@@ -11,8 +11,8 @@
 #include "../headers/Texture.h"
 #include "../headers/Gameplay.h"
 
-Music bgMusic; //music
-Sound collisionWave; //sound
+//Music bgMusic; //music
+//Sound collisionWave; //sound
 
 void InitializeGlobal() 
 {
