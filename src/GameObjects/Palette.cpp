@@ -1,30 +1,28 @@
-#include "../headers/Palette.h"
+#include "Palette.h"
 
 #include <iostream>
 #include <time.h>
 
 #include "raylib.h"
 
-#include "../headers/Ball.h"
-#include "../headers/Collision.h"
-#include "../headers/Gameplay.h"
-#include "../headers/Initialize.h"
-#include "../headers/Texture.h"
-#include "../headers/Game.h"
+#include "Ball.h"
+#include "Collision.h"
+#include "Gameplay.h"
+#include "Initialize.h"
+#include "Texture.h"
+#include "Game.h"
 
-//Player1
 const int player1X = 2;
 const int player1Y = 200;
-//Player2
+
 const int player2X = 747;
 const int player2Y = 200;
 
-//Music bgMusic; //music
-//Sound collisionWave; //sound
+const float speedPlayer1 = 5.0f;
+const float speedPlayer2 = 5.0f;
 
 void InitPlayers() 
 {
-	//---------initPlayers-----------
 	player1.x = player1X;
 	player1.y = player1Y;
 	player1.width = 25;
@@ -38,14 +36,13 @@ void InitPlayers()
 	player2.height = 100;
 	player2.color = colors[rand() % 7];
 	p2 = LoadTexture("img/player2.png");
-	//---------initPlayers-----------
 }
 
 void InitPlayerPointsMenu()
 {
 	pointsP1 = startPoints;
 	pointsP2 = startPoints;
-	games = 0;
+	games = initialGames;
 	stateGame = true;
 	stateMenu = false;
 	stateEndMenu = false;
@@ -54,7 +51,7 @@ void InitPlayerPointsMenu()
 
 void CollisionPlayerWithBall() 
 {
-	if (previusFrameCollisionP1) //collisions Player 1
+	if (previusFrameCollisionP1)
 	{
 		lastCollisionFramesP1++;
 		if (lastCollisionFramesP1 >= dontCheckCollisionFrames)
@@ -65,7 +62,7 @@ void CollisionPlayerWithBall()
 	}
 
 
-	if (previusFrameCollisionP2) //collisions Player 2
+	if (previusFrameCollisionP2)
 	{
 		lastCollisionFramesP2++;
 		if (lastCollisionFramesP2 >= dontCheckCollisionFrames)
@@ -75,7 +72,7 @@ void CollisionPlayerWithBall()
 		}
 	}
 
-	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1)) //collisions Player 1
+	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1))
 	{
 		if (!previusFrameCollisionP1)
 		{
@@ -87,10 +84,9 @@ void CollisionPlayerWithBall()
 		}
 
 	}
-	//Player 2
-	if (CheckCollisionCircleRec(ballPosition, ballRadius, player2)) //collisions Player 2
+	
+	if (CheckCollisionCircleRec(ballPosition, ballRadius, player2))
 	{
-
 		if (!previusFrameCollisionP2)
 		{
 			ballSpeed.x = ballSpeed.x * -1;
@@ -105,8 +101,6 @@ void CollisionPlayerWithBall()
 
 void PlayerGetPoints()
 {
-	//----------Player Points------------
-	//----points----
 	if (ballPosition.x > screenWidth)
 	{
 		ballPosition.x = (float)screenWidth / 2;
@@ -144,13 +138,16 @@ void PlayerPointsConditions()
 		stateGame = false;
 		stateEndMenu = true;
 	}
-	//----------Player Points------------
 }
 
 void CheckPlayerWins()
 {
 	if (player1Wins > player2Wins)
+	{
 		DrawText("Player 1 Win", 300, 180, 20, RAYWHITE);
+	}
 	if (player2Wins > player1Wins)
+	{
 		DrawText("Player 2 Win", 300, 180, 20, RAYWHITE);
+	}
 }

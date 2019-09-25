@@ -12,75 +12,75 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\codefiles\Ball.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Collision.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Game.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Gameplay.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Image.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Palette.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Texture.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Initialize.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\FinalMenu.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Menu.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\codefiles\Unload.cpp">
-      <Filter>filescode</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\main.cpp">
       <Filter>Codigo Fuente</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Visuals\Image.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Visuals\Texture.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\FinalMenu.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\Gameplay.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\Menu.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\Game.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Functions\Collision.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Functions\Initialize.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Functions\Unload.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameObjects\Ball.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameObjects\Palette.cpp">
+      <Filter>filescode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\headers\Ball.h">
+    <ClInclude Include="..\src\Functions\Collision.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Collision.h">
+    <ClInclude Include="..\src\Functions\Initialize.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Game.h">
+    <ClInclude Include="..\src\Functions\Unload.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Gameplay.h">
+    <ClInclude Include="..\src\Game\Game.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Image.h">
+    <ClInclude Include="..\src\Screens\FinalMenu.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Palette.h">
+    <ClInclude Include="..\src\Screens\Gameplay.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Texture.h">
+    <ClInclude Include="..\src\Screens\Menu.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Initialize.h">
+    <ClInclude Include="..\src\Visuals\Image.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\FinalMenu.h">
+    <ClInclude Include="..\src\Visuals\Texture.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Menu.h">
+    <ClInclude Include="..\src\GameObjects\Ball.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\headers\Unload.h">
+    <ClInclude Include="..\src\GameObjects\Palette.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,16 +1,16 @@
-#include "../headers/Collision.h"
+#include "Collision.h"
 
 #include "raylib.h"
 
-#include "../headers/Gameplay.h"
-#include "../headers/Ball.h"
-#include "../headers/Palette.h"
+#include "Gameplay.h"
+#include "Ball.h"
+#include "Palette.h"
 
 const int dontCheckCollisionFrames = 10;
-bool previusFrameCollisionP1 = false; //collision
-int lastCollisionFramesP1 = 0; //collision
-bool previusFrameCollisionP2 = false; //collision
-int lastCollisionFramesP2 = 0; //collision
+bool previusFrameCollisionP1 = false;
+int lastCollisionFramesP1 = 0;
+bool previusFrameCollisionP2 = false;
+int lastCollisionFramesP2 = 0;
 
 void WindowCollision() 
 {

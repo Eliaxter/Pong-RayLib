@@ -1,8 +1,8 @@
-#include "../headers/Unload.h"
+#include "Unload.h"
 
 #include "raylib.h"
 
-#include "../headers/Gameplay.h"
+#include "Gameplay.h"
 
 Music bgMusic;
 Sound collisionWave;

@@ -1,25 +1,28 @@
-#include "../headers/Ball.h"
+#include "Ball.h"
 
 #include <iostream>
 #include <time.h>
 
 #include "raylib.h"
 
-#include "../headers/Gameplay.h"
-#include "../headers/Palette.h"
-#include "../headers/Collision.h"
+#include "Gameplay.h"
+#include "Palette.h"
+#include "Collision.h"
 
 const int minSpeedBall = 6;
 const int maxSpeedBall = 7;
 float initialRadius = 20.0f;
 float ballRadius;
 float powerBallRadius = 15.0f;
+float secondPowerBallRadius = 10.0f;
 int randBallPosition;
 Vector2 ballPosition;
 Vector2 ballSpeed;
 Vector2 powerBallPosition;
+Vector2 secondPowerBallPosition;
 
 static float teleportPowerBall = -500.0f;
+
 
 bool isTimeRunning = true;
 
@@ -47,8 +50,6 @@ void CollisionPowerBall()
 		powerBallPosition.y = teleportPowerBall;
 	}
 
-	double oldTimer = clock();
-	double timer = clock();
 	float dt = (float)((timer - oldTimer) / 1000.0);
 	oldTimer = timer;
 
@@ -61,6 +62,11 @@ void CollisionPowerBall()
 				ballRadius = initialRadius;
 			}
 		}
+	}
+
+	if (oldTimer > 500)
+	{
+		DrawCircleV(secondPowerBallPosition, secondPowerBallRadius, BLACK);
 	}
 
 }
@@ -98,6 +104,16 @@ void InitPowerUp()
 	int random2 = 0;
 	random2 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
 	powerBallPosition.y = random2;
+}
+
+void InitSecondPowerUP()
+{
+	float random3 = 0.0f;
+	random3 = GetRandomValue(randomPowerUPW1, randomPowerUPW2);
+	secondPowerBallPosition.x = random3;
+	float random4 = 0.0f;
+	random4 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
+	secondPowerBallPosition.y = random4;
 }
 
 void RandomBallSpeed() 

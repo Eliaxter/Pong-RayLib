@@ -1,6 +1,6 @@
-#include "../headers/Texture.h"
+#include "Texture.h"
 
-#include "../headers/Image.h"
+#include "Image.h"
 
 Texture2D p1;
 Texture2D p2;

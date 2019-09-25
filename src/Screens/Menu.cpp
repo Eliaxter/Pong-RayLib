@@ -1,10 +1,10 @@
-#include "../headers/Menu.h"
+#include "Menu.h"
 
 #include "raylib.h"
 
-#include "../headers/Palette.h"
-#include "../headers/Gameplay.h"
-#include "../headers/Initialize.h"
+#include "Palette.h"
+#include "Gameplay.h"
+#include "Initialize.h"
 
 void Menu()
 {
@@ -23,6 +23,7 @@ void Menu()
 	{
 		InitPlayerPointsMenu();
 		InitializeGame();
+		InitializeTime();
 	}
 	EndDrawing();
 }

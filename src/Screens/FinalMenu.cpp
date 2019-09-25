@@ -1,10 +1,10 @@
-#include "../headers/FinalMenu.h"
+#include "FinalMenu.h"
 
 #include "raylib.h"
 
-#include "../headers/Game.h"
-#include "../headers/Gameplay.h"
-#include "../headers/Palette.h"
+#include "Game.h"
+#include "Gameplay.h"
+#include "Palette.h"
 
 void FinalMenu()
 {

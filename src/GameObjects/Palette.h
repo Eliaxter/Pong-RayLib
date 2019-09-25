@@ -10,6 +10,9 @@ extern const int player1Y;
 extern const int player2X;
 extern const int player2Y;
 
+extern const float speedPlayer1;
+extern const float speedPlayer2;
+
 void InitPlayers();
 void InitPlayerPointsMenu();
 void CollisionPlayerWithBall();

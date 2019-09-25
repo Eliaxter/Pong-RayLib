@@ -3,5 +3,6 @@
 
 void InitializeGlobal();
 void InitializeGame();
+void InitializeTime();
 
 #endif

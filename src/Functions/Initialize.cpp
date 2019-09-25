@@ -1,15 +1,15 @@
-#include "../headers/Initialize.h"
+#include "Initialize.h"
 
 #include "raylib.h"
 
 #include <iostream>
 #include <time.h>
 
-#include "../headers/Ball.h"
-#include "../headers/Palette.h"
-#include "../headers/Image.h"
-#include "../headers/Texture.h"
-#include "../headers/Gameplay.h"
+#include "Ball.h"
+#include "Palette.h"
+#include "Image.h"
+#include "Texture.h"
+#include "Gameplay.h"
 
 void InitializeGlobal() 
 {
@@ -27,8 +27,17 @@ void InitializeGame()
 	InitPlayers();
 	InitBall();
 	InitPowerUp();
+	InitSecondPowerUP();
 	RandomBallSpeed();
 	ColorBall();
 	LoadImageBG();
 	LoadTextureBG();
+}
+
+void InitializeTime()
+{
+	timer = GetTime();
+	oldTimer = GetTime();
+	timer = clock();
+	oldTimer = clock();
 }

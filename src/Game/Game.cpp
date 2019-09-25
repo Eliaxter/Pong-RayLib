@@ -1,12 +1,12 @@
-#include "../headers/Game.h"
+#include "Game.h"
 
 #include "raylib.h"
 
-#include "../headers/Initialize.h"
-#include "../headers/Menu.h"
-#include "../headers/Gameplay.h"
-#include "../headers/FinalMenu.h"
-#include "../headers/Unload.h"
+#include "Initialize.h"
+#include "Menu.h"
+#include "Gameplay.h"
+#include "FinalMenu.h"
+#include "Unload.h"
 
 bool stateGame = true;
 bool stateMenu = true;
