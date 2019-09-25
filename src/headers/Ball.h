@@ -3,9 +3,9 @@
 
 extern const int minSpeedBall; //ball
 extern const int maxSpeedBall; //ball
-extern int initialRadius; //ball
-extern int ballRadius; //ball
-extern int powerBallRadius; //ball
+extern float initialRadius; //ball
+extern float ballRadius; //ball
+extern float powerBallRadius; //ball
 extern int randBallPosition; //ball
 extern Vector2 ballPosition; //ball
 extern Vector2 ballSpeed; //ball

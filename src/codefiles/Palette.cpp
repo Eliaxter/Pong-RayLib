@@ -11,9 +11,6 @@
 #include "../headers/Initialize.h"
 #include "../headers/Texture.h"
 
-//Players
-Rectangle player1;
-Rectangle player2;
 //Player1
 const int player1X = 2;
 const int player1Y = 200;

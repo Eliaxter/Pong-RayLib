@@ -8,7 +8,12 @@
 #include "../headers/FinalMenu.h"
 #include "../headers/DeInit.h"
 
-
+/*
+bool stateGame = true;
+bool stateMenu = true;
+bool stateEndMenu = true;
+bool AI = true;
+*/
 void GameLoop() 
 {
 	InitializeGlobal();

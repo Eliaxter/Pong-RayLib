@@ -11,9 +11,9 @@
 
 const int minSpeedBall = 6; //ball
 const int maxSpeedBall = 7; //ball
-int initialRadius = 20; //ball
-int ballRadius = 20; //ball
-int powerBallRadius = 15; //ball
+float initialRadius = 20; //ball
+float ballRadius = 20; //ball
+float powerBallRadius = 15; //ball
 int randBallPosition; //ball
 Vector2 ballPosition; //ball
 Vector2 ballSpeed; //ball
@@ -22,6 +22,9 @@ Vector2 powerBall; //ball
 int sizeColors = 5; //ball
 Color colors[8]; //ball
 Color colorBall; //ball
+
+Rectangle player1;
+Rectangle player2;
 
 void RandomBallPos()
 {
@@ -40,7 +43,7 @@ void RandomBallPos()
 
 void CollisionPowerBall() 
 {
-	if (CheckCollisionCircles(ballPosition, ballRadius, powerBall, powerBallRadius)) //collisions Powe ball
+	if (CheckCollisionCircles(ballPosition, ballRadius, powerBall, powerBallRadius))
 	{
 		ballRadius = 40;
 		if (ballPosition.x > halfScreenWidth)
@@ -54,7 +57,7 @@ void CollisionPowerBall()
 		powerBall.x = -500;
 		powerBall.y = -500;
 	}
-	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1) == 3 || CheckCollisionCircleRec(ballPosition, ballRadius, player2) == 3)
+	if (CheckCollisionCircleRec(ballPosition, ballRadius, player1) == 3.0f || CheckCollisionCircleRec(ballPosition, ballRadius, player2) == 3.0f)
 		ballRadius = initialRadius;
 }
 

@@ -28,11 +28,11 @@ void InitializeGlobal()
 void InitializeGame() 
 {
 	SetTargetFPS(60);
-	ColorBall();
 	InitPlayers();
 	InitBall();
 	InitPowerUp();
 	RandomBallSpeed();
+	ColorBall();
 	LoadImageBG();
 	LoadTextureBG();
 }

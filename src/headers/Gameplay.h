@@ -25,4 +25,7 @@ extern int gamesToWin; //gameplay
 extern int incrementGames; //gameplay
 extern int initialGames; //gameplay
 
+extern Music bgMusic;
+extern Sound collisionWave;
+
 void Game();
