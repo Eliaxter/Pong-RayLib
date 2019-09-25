@@ -28,7 +28,9 @@ void GameLoop()
 			Update();
 			Draw();
 			if (IsKeyDown(KEY_ESCAPE))
+			{
 				stateGame = false;
+			}
 		}
 		while (stateEndMenu == true)
 		{
@@ -36,7 +38,9 @@ void GameLoop()
 		}
 
 		if (IsKeyDown(KEY_ESCAPE))
+		{
 			break;
+		}
 	}
 	Unload();
 }

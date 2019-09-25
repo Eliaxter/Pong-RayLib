@@ -10,7 +10,7 @@ extern float powerBallRadius;
 extern int randBallPosition;
 extern Vector2 ballPosition;
 extern Vector2 ballSpeed;
-extern Vector2 powerBall;
+extern Vector2 powerBallPosition;
 
 extern int sizeColors;
 extern Color colors[8];

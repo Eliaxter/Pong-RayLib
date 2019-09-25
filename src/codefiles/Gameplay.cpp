@@ -55,7 +55,7 @@ void Draw()
 	DrawText(TextFormat("Games: %i", games), 400, 10, 20, BLACK);
 	DrawText(TextFormat("Player 2: %i", pointsP2), 650, 10, 20, BLACK);
 	DrawCircleV(ballPosition, ballRadius, colorBall);
-	DrawCircleV(powerBall, powerBallRadius, WHITE);
+	DrawCircleV(powerBallPosition, powerBallRadius, WHITE);
 	DrawTexture(p1, player1.x, player1.y, WHITE);
 	DrawTexture(p2, player2.x, player2.y, WHITE);
 }
@@ -64,7 +64,7 @@ void Input()
 {
 	if (IsKeyDown(KEY_W)) player1.y -= 5.0f; //input
 	if (IsKeyDown(KEY_S)) player1.y += 5.0f; //input
-	//player2.y = ballPosition.y - 50;
-	if (IsKeyDown(KEY_UP)) player2.y -= 5.0f;
-	if (IsKeyDown(KEY_DOWN)) player2.y += 5.0f;
+	player2.y = ballPosition.y - 50;
+	//if (IsKeyDown(KEY_UP)) player2.y -= 5.0f;
+	//if (IsKeyDown(KEY_DOWN)) player2.y += 5.0f;
 }
