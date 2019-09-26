@@ -11,6 +11,7 @@
 #include "Texture.h"
 #include "Gameplay.h"
 
+
 void InitializeGlobal() 
 {
 	srand(time(NULL));

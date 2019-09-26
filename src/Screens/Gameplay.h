@@ -2,8 +2,8 @@
 #define GAMEPLAY_H
 #include "raylib.h"
 
-extern const int screenWidth;
-extern const int screenHeight;
+extern int screenWidth;
+extern int screenHeight;
 extern const int minScreenW;
 extern const int minScreenH; 
 extern const int screenBorderX;
@@ -34,6 +34,8 @@ extern double initOldTimer;
 extern double initTimer;
 extern double oldTimer;
 extern double timer;
+
+extern bool windowsSize;
 
 void Update();
 void Draw();
