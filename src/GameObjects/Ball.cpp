@@ -23,7 +23,6 @@ Vector2 secondPowerBallPosition;
 
 static float teleportPowerBall = -500.0f;
 
-
 bool isTimeRunning = true;
 
 int sizeColors = 5;

@@ -1,5 +1,6 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
+
 #include "raylib.h"
 
 extern int screenWidth;
@@ -34,8 +35,6 @@ extern double initOldTimer;
 extern double initTimer;
 extern double oldTimer;
 extern double timer;
-
-extern bool windowsSize;
 
 void Update();
 void Draw();
