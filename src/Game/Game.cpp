@@ -2,6 +2,8 @@
 
 #include "raylib.h"
 
+#include <iostream>
+
 #include "Initialize.h"
 #include "Menu.h"
 #include "Gameplay.h"
@@ -12,6 +14,8 @@ bool stateGame = true;
 bool stateMenu = true;
 bool stateEndMenu = true;
 bool AI;
+
+float timer = 0;
 
 void GameLoop() 
 {
@@ -31,6 +35,7 @@ void GameLoop()
 			{
 				stateGame = false;
 			}
+			timer++;
 		}
 		while (stateEndMenu == true)
 		{
@@ -43,4 +48,5 @@ void GameLoop()
 		}
 	}
 	Unload();
+	std::cin.get();
 }

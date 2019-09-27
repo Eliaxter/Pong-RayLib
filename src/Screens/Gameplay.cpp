@@ -32,10 +32,6 @@ int gamesToWin = 3;
 int incrementGames = 1;
 int initialGames = 0;
 
-double initOldTimer = 0;
-double initTimer = 0;
-double oldTimer = clock();
-double timer = clock();
 
 void Update() 
 {
@@ -61,6 +57,7 @@ void Draw()
 	DrawText(TextFormat("Player 2: %i", pointsP2), 650, 10, 20, BLACK);
 	DrawCircleV(ballPosition, ballRadius, colorBall);
 	DrawCircleV(powerBallPosition, powerBallRadius, WHITE);
+	DrawSecondPowerUP();
 	DrawTexture(p1, player1.x, player1.y, WHITE);
 	DrawTexture(p2, player2.x, player2.y, WHITE);
 }

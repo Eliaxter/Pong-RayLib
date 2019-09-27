@@ -34,11 +34,3 @@ void InitializeGame()
 	LoadImageBG();
 	LoadTextureBG();
 }
-
-void InitializeTime()
-{
-	timer = GetTime();
-	oldTimer = GetTime();
-	timer = clock();
-	oldTimer = clock();
-}

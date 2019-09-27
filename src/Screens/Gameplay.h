@@ -31,10 +31,7 @@ extern int initialGames;
 extern Music bgMusic;
 extern Sound collisionWave;
 
-extern double initOldTimer;
-extern double initTimer;
-extern double oldTimer;
-extern double timer;
+extern float timer;
 
 void Update();
 void Draw();

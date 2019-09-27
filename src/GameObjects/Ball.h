@@ -26,6 +26,7 @@ void ColorBall();
 void InitBall();
 void InitPowerUp();
 void InitSecondPowerUP();
+void DrawSecondPowerUP();
 void RandomBallSpeed();
 void MoveBall();
 

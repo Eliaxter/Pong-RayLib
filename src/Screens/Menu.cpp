@@ -19,13 +19,11 @@ void Menu()
 	{
 		InitPlayerPointsMenu();
 		InitializeGame();
-		InitializeTime();
 	}
 	if (IsKeyDown(KEY_E))
 	{
 		InitPlayerPointsMenu();
 		InitializeGame();
-		InitializeTime();
 	}
 	EndDrawing();
 }

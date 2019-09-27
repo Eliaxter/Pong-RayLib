@@ -9,6 +9,8 @@
 #include "Palette.h"
 #include "Collision.h"
 
+using namespace std;
+
 const int minSpeedBall = 6;
 const int maxSpeedBall = 7;
 float initialRadius = 20.0f;
@@ -32,6 +34,8 @@ Color colorBall;
 Rectangle player1;
 Rectangle player2;
 
+static bool canDrawPowerBall = false;
+
 void CollisionPowerBall() 
 {
 	if (CheckCollisionCircles(ballPosition, ballRadius, powerBallPosition, powerBallRadius))
@@ -49,12 +53,9 @@ void CollisionPowerBall()
 		powerBallPosition.y = teleportPowerBall;
 	}
 
-	float dt = (float)((timer - oldTimer) / 1000.0);
-	oldTimer = timer;
-
 	if (ballRadius == 40.0f)
 	{
-		if (oldTimer >= GetTime())
+		if (timer / (float)GetFPS() > 10.0f)
 		{
 			if (CheckCollisionCircleRec(ballPosition, ballRadius, player1) || CheckCollisionCircleRec(ballPosition, ballRadius, player2))
 			{
@@ -62,12 +63,6 @@ void CollisionPowerBall()
 			}
 		}
 	}
-
-	if (oldTimer > 500)
-	{
-		DrawCircleV(secondPowerBallPosition, secondPowerBallRadius, BLACK);
-	}
-
 }
 
 void ColorBall()
@@ -113,6 +108,25 @@ void InitSecondPowerUP()
 	float random4 = 0.0f;
 	random4 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
 	secondPowerBallPosition.y = random4;
+}
+
+void DrawSecondPowerUP()
+{
+	if (timer / (float)GetFPS() > 10.0f && !canDrawPowerBall)
+	{
+		canDrawPowerBall = true;
+	}
+
+	if (canDrawPowerBall)
+	{
+		DrawCircleV(secondPowerBallPosition, secondPowerBallRadius, BLACK);
+	}
+
+	if (CheckCollisionCircles(secondPowerBallPosition, secondPowerBallRadius, ballPosition, ballRadius))
+	{
+		timer = 0;
+		canDrawPowerBall = false;
+	}
 }
 
 void RandomBallSpeed() 
