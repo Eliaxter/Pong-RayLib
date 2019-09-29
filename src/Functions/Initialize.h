@@ -1,7 +1,11 @@
 #ifndef INITIALIZE_H
 #define INITIALIZE_H
 
-void InitializeGlobal();
-void InitializeGame();
+namespace Game
+{
+	void InitializeGlobal();
+	void InitializeGamePVP();
+	void InitializeGamePVE();
+}
 
 #endif

@@ -6,36 +6,39 @@
 #include "Ball.h"
 #include "Palette.h"
 
-const int dontCheckCollisionFrames = 10;
-bool previusFrameCollisionP1 = false;
-int lastCollisionFramesP1 = 0;
-bool previusFrameCollisionP2 = false;
-int lastCollisionFramesP2 = 0;
-
-void WindowCollision() 
+namespace Game
 {
-	if ((ballPosition.y >= (screenHeight - ballRadius)) || (ballPosition.y <= ballRadius)) 
-	{
-		ballSpeed.y *= -1.0f;
-	}
-}
+	const int dontCheckCollisionFrames = 10;
+	bool previusFrameCollisionP1 = false;
+	int lastCollisionFramesP1 = 0;
+	bool previusFrameCollisionP2 = false;
+	int lastCollisionFramesP2 = 0;
 
-void WindowLimits() 
-{
-	if (player1.y + player1.height > screenHeight)
+	void WindowCollision()
 	{
-		player1.y = screenHeight - player1.height;
+		if ((ballPosition.y >= (screenHeight - ballRadius)) || (ballPosition.y <= ballRadius))
+		{
+			ballSpeed.y *= -1.0f;
+		}
 	}
-	if (player1.y < minScreenH)
+
+	void WindowLimits()
 	{
-		player1.y = 0;
-	}
-	if (player2.y + player2.height > screenHeight)
-	{
-		player2.y = screenHeight - player2.height;
-	}
-	if (player2.y < minScreenH)
-	{
-		player2.y = 0;
+		if (player1.y + player1.height > screenHeight)
+		{
+			player1.y = screenHeight - player1.height;
+		}
+		if (player1.y < minScreenH)
+		{
+			player1.y = 0;
+		}
+		if (player2.y + player2.height > screenHeight)
+		{
+			player2.y = screenHeight - player2.height;
+		}
+		if (player2.y < minScreenH)
+		{
+			player2.y = 0;
+		}
 	}
 }

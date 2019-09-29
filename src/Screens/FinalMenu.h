@@ -1,6 +1,8 @@
 #ifndef FINALMENU_H
 #define FINALMENU_H
 
-void FinalMenu();
-
+namespace Game
+{
+	void FinalMenu();
+}
 #endif

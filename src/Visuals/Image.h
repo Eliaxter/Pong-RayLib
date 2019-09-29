@@ -2,12 +2,15 @@
 #define IMAGE_H
 #include "raylib.h"
 
-extern Image bgImage;
-extern Image imgBall;
-extern Image imgPlayer1;
-extern Image imgPlayer2;
+namespace Game
+{
+	extern Image bgImage;
+	extern Image imgBall;
+	extern Image imgPlayer1;
+	extern Image imgPlayer2;
 
-void LoadImageBG();
-void UnloadImage();
+	void LoadImageBG();
+	void UnloadImage();
+}
 
 #endif

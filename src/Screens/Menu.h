@@ -2,6 +2,9 @@
 #define MENU_H
 #include "raylib.h"
 
-void Menu();
+namespace Game
+{
+	void Menu();
+}
 
 #endif

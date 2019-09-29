@@ -4,12 +4,15 @@
 
 #include "Gameplay.h"
 
-Music bgMusic;
-Sound collisionWave;
-
-void Unload() 
+namespace Game
 {
-	UnloadSound(collisionWave);
-	UnloadMusicStream(bgMusic);
-	CloseWindow();
+	Music bgMusic;
+	Sound collisionWave;
+
+	void Unload()
+	{
+		UnloadSound(collisionWave);
+		UnloadMusicStream(bgMusic);
+		CloseWindow();
+	}
 }

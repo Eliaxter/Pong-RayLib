@@ -1,11 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
-extern bool stateGame;
-extern bool stateMenu;
-extern bool stateEndMenu;
-extern bool AI;
+namespace Game
+{
+	extern bool stateGame;
+	extern bool stateMenu;
+	extern bool stateEndMenu;
+	extern bool PVE;
 
-void GameLoop();
+	void GameLoop();
+}
 
 #endif

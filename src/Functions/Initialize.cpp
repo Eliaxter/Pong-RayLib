@@ -11,26 +11,41 @@
 #include "Texture.h"
 #include "Gameplay.h"
 
-
-void InitializeGlobal() 
+namespace Game
 {
-	srand(time(NULL));
-	InitWindow(screenWidth, screenHeight, "Pong Elias");
-	InitAudioDevice();
-	bgMusic = LoadMusicStream("sounds/background-music.ogg");
-	collisionWave = LoadSound("sounds/dung.wav");
-}
+	void InitializeGlobal()
+	{
+		srand(time(NULL));
+		InitWindow(screenWidth, screenHeight, "Pong Elias");
+		InitAudioDevice();
+		bgMusic = LoadMusicStream("sounds/background-music.ogg");
+		collisionWave = LoadSound("sounds/dung.wav");
+	}
 
-void InitializeGame() 
-{
-	SetTargetFPS(60);
-	PlayMusicStream(bgMusic);
-	InitPlayers();
-	InitBall();
-	InitPowerUp();
-	InitSecondPowerUP();
-	RandomBallSpeed();
-	ColorBall();
-	LoadImageBG();
-	LoadTextureBG();
+	void InitializeGamePVP()
+	{
+		SetTargetFPS(60);
+		PlayMusicStream(bgMusic);
+		InitPlayers();
+		InitBall();
+		InitPowerUp();
+		InitSecondPowerUP();
+		RandomBallSpeed();
+		ColorBall();
+		LoadImageBG();
+		LoadTextureBG();
+	}
+
+	void InitializeGamePVE()
+	{
+		SetTargetFPS(60);
+		PlayMusicStream(bgMusic);
+		InitPlayers();
+		InitPowerUp();
+		InitSecondPowerUP();
+		RandomBallSpeed();
+		ColorBall();
+		LoadImageBG();
+		LoadTextureBG();
+	}
 }

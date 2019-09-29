@@ -10,43 +10,56 @@
 #include "FinalMenu.h"
 #include "Unload.h"
 
-bool stateGame = true;
-bool stateMenu = true;
-bool stateEndMenu = true;
-bool AI;
-
-float timer = 0;
-
-void GameLoop() 
+namespace Game
 {
-	InitializeGlobal();
-	while (true)
+
+	bool stateGame = true;
+	bool stateMenu = true;
+	bool stateEndMenu = true;
+	bool PVE;
+
+	float timer = 0;
+
+	void GameLoop()
 	{
-		while (stateMenu == true)
+		InitializeGlobal();
+		while (true)
 		{
-			Menu();
-		}
-		while (stateGame == true)
-		{
-			Input();
-			Update();
-			Draw();
+			while (stateMenu == true)
+			{
+				Menu();
+			}
+			while (stateGame == true)
+			{
+				if (PVE == true)
+				{
+					AI();
+				}
+				else
+				{
+					Input();
+				}
+				Update();
+				Draw();
+				if (IsKeyDown(KEY_ESCAPE))
+				{
+					stateGame = false;
+					CloseWindow();
+				}
+				timer++;
+			}
+			while (stateEndMenu == true)
+			{
+				FinalMenu();
+			}
+			/*
 			if (IsKeyDown(KEY_ESCAPE))
 			{
-				stateGame = false;
-			}
-			timer++;
+				break;
+			}*/
 		}
-		while (stateEndMenu == true)
-		{
-			FinalMenu();
-		}
-
-		if (IsKeyDown(KEY_ESCAPE))
-		{
-			break;
-		}
+		Unload();
+		EndDrawing();
+		std::cin.get();
 	}
-	Unload();
-	std::cin.get();
 }

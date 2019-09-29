@@ -1,6 +1,9 @@
 #ifndef UNLOAD_H
 #define UNLOAD_H
 
-void Unload();
+namespace Game
+{
+	void Unload();
+}
 
 #endif
