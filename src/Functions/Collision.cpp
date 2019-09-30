@@ -8,17 +8,30 @@
 
 namespace Game
 {
-	const int dontCheckCollisionFrames = 10;
+	const int dontCheckCollisionFrames = 5;
 	bool previusFrameCollisionP1 = false;
 	int lastCollisionFramesP1 = 0;
 	bool previusFrameCollisionP2 = false;
 	int lastCollisionFramesP2 = 0;
+	bool previusFrameCollision = false;
+	int lastCollisionFrames = 0;
+	static float reverseSpeed = -1.0f;
 
 	void WindowCollision()
 	{
+		if (previusFrameCollision)
+		{
+			lastCollisionFrames++;
+			if (lastCollisionFrames >= dontCheckCollisionFrames)
+			{
+				lastCollisionFrames = 0;
+				previusFrameCollision = false;
+			}
+		}
+
 		if ((ballPosition.y >= (screenHeight - ballRadius)) || (ballPosition.y <= ballRadius))
 		{
-			ballSpeed.y *= -1.0f;
+			ballSpeed.y *= reverseSpeed;
 		}
 	}
 
@@ -65,12 +78,12 @@ namespace Game
 			}
 		}
 
-		if (CheckCollisionCircleRec(ballPosition, (ballRadius), player1))
+		if (CheckCollisionCircleRec(ballPosition, ballRadius, player1))
 		{
 			if (!previusFrameCollisionP1)
 			{
-				ballPosition.x *= -1 * GetFrameTime();
-				ballPosition.y *= -1;
+				ballSpeed.x = ballSpeed.x * -1.0f;
+				ballPosition.y += ballSpeed.y * -1.0f;
 				colorBall = player1.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP1 = true;
@@ -78,16 +91,16 @@ namespace Game
 
 		}
 
-		if (CheckCollisionCircleRec(ballPosition, (ballRadius), player2))
+		if (CheckCollisionCircleRec(ballPosition, ballRadius, player2))
 		{
+			
 			if (!previusFrameCollisionP2)
 			{
-				ballPosition.x *= -1 * GetFrameTime();
-				ballPosition.y *= -1;
+				ballSpeed.x = ballSpeed.x * -1.0f;
+				ballPosition.y += ballSpeed.y * -1.0f;
 				colorBall = player2.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP2 = true;
-
 			}
 		}
 	}

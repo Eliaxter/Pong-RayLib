@@ -7,6 +7,8 @@
 #include "Initialize.h"
 #include "Game.h"
 
+static float resetTimer = 0.0f;
+
 namespace Game
 {
 	void Menu()
@@ -23,7 +25,7 @@ namespace Game
 			pointsP1 = startPoints;
 			pointsP2 = startPoints;
 			games = initialGames;
-			timer = 0.0f;
+			timer = resetTimer;
 			stateMenu = false;
 			stateGame = true;
 		}

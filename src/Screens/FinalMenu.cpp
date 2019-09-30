@@ -7,6 +7,8 @@
 #include "Palette.h"
 #include "Unload.h"
 
+static float resetTimer = 0.0f;
+
 namespace Game
 {
 	void FinalMenu()
@@ -25,7 +27,6 @@ namespace Game
 			stateEndMenu = false;
 			stateGame = false;
 			StopMusicStream(bgMusic);
-
 		}
 		DrawText("Play Again: Y/N", 300, 200, 20, RAYWHITE);
 		if (IsKeyDown(KEY_Y))
@@ -34,7 +35,7 @@ namespace Game
 			pointsP2 = startPoints;
 			games = initialGames;
 			InitPlayers();
-			timer = 0.0f;
+			timer = resetTimer;
 			stateMenu = false;
 			stateGame = true;
 			stateEndMenu = false;

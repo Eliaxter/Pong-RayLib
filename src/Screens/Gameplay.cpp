@@ -54,10 +54,11 @@ namespace Game
 		BeginDrawing();
 		ClearBackground(BLACK);
 		DrawTexture(bgTexture, 0, 0, WHITE);
-		DrawText(TextFormat("Player 1: %i", pointsP1), 10, 10, 20, BLACK);
+		//DrawText(TextFormat("Player 1: %i", pointsP1), 10, 10, 20, BLACK);
+		DrawText(TextFormat("Player 1: %i", (int)ballPosition.y), 10, 10, 20, BLACK);
 		DrawText(TextFormat("Games: %i", games), 400, 10, 20, BLACK);
 		DrawText(TextFormat("Player 2: %i", pointsP2), 650, 10, 20, BLACK);
-		DrawCircleV(ballPosition, ballRadius, colorBall);
+		DrawCircle(ballPosition.x, ballPosition.y, ballRadius, colorBall);
 		DrawCircleV(powerBallPosition, powerBallRadius, WHITE);
 		DrawSecondPowerUP();
 		DrawTexture(p1, player1.x, player1.y, WHITE);
@@ -66,9 +67,9 @@ namespace Game
 
 	void Input()
 	{
-		if (IsKeyDown(KEY_W)) player1.y -= speedPlayer1 * GetFrameTime();
-		if (IsKeyDown(KEY_S)) player1.y += speedPlayer1 * GetFrameTime();
-		if (IsKeyDown(KEY_UP)) player2.y -= speedPlayer2 * GetFrameTime();
-		if (IsKeyDown(KEY_DOWN)) player2.y += speedPlayer2 * GetFrameTime();
+		if (IsKeyDown(KEY_W)) player1.y -= speedPlayer1;
+		if (IsKeyDown(KEY_S)) player1.y += speedPlayer1;
+		if (IsKeyDown(KEY_UP)) player2.y -= speedPlayer2;
+		if (IsKeyDown(KEY_DOWN)) player2.y += speedPlayer2;
 	}
 }

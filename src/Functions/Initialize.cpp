@@ -30,7 +30,7 @@ namespace Game
 		InitBall();
 		InitPowerUp();
 		InitSecondPowerUP();
-		RandomBallSpeed();
+		//RandomBallSpeed();
 		ColorBall();
 		LoadImageBG();
 		LoadTextureBG();
@@ -43,7 +43,7 @@ namespace Game
 		InitPlayers();
 		InitPowerUp();
 		InitSecondPowerUP();
-		RandomBallSpeed();
+		//RandomBallSpeed();
 		ColorBall();
 		LoadImageBG();
 		LoadTextureBG();

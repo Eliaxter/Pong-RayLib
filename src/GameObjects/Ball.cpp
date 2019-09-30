@@ -12,10 +12,11 @@ using namespace std;
 
 namespace Game
 {
-	const int minSpeedBall = 6;
-	const int maxSpeedBall = 7;
+	float minSpeedBall = 6;
+    float maxSpeedBall = 7.0f;
 	float initialRadius = 20.0f;
 	float ballRadius;
+	static float newRadius = 40.0f;
 	float powerBallRadius = 15.0f;
 	float secondPowerBallRadius = 10.0f;
 	int randBallPosition;
@@ -23,42 +24,44 @@ namespace Game
 	Vector2 ballSpeed;
 	Vector2 powerBallPosition;
 	Vector2 secondPowerBallPosition;
-
-	static float teleportPowerBall = -500.0f;
-
-	bool isTimeRunning = true;
-
-	static bool canDrawPowerBall = false;
-
 	int sizeColors = 5;
 	Color colors[8];
 	Color colorBall;
 
+	static float teleportPowerBall = -500.0f;
+	static bool canDrawPowerBall = false;
+
+	bool isTimeRunning = true;
+
 	Rectangle player1;
 	Rectangle player2;
 
-	static float resetTimer = 0.0;
+	static int extraPointsPowerUp = 2;
+
+	float timer = 0.0f;
+	static float resetTimer = 0.0f;
+	static float tenSeconds = 10.0f;
 
 	void CollisionPowerBall()
 	{
 		if (CheckCollisionCircles(ballPosition, ballRadius, powerBallPosition, powerBallRadius))
 		{
-			ballRadius = 40.0f;
+			ballRadius = newRadius;
 			if (ballPosition.x > halfScreenWidth)
 			{
-				pointsP1 += 2;
+				pointsP1 += extraPointsPowerUp;
 			}
 			if (ballPosition.x < halfNegativeScreenWidth)
 			{
-				pointsP2 += 2;
+				pointsP2 += extraPointsPowerUp;
 			}
 			powerBallPosition.x = teleportPowerBall;
 			powerBallPosition.y = teleportPowerBall;
 		}
 
-		if (ballRadius == 40.0f)
+		if (ballRadius == newRadius)
 		{
-			if (timer / (float)GetFPS() > 10.0f)
+			if (timer / static_cast<float>(GetFPS()) > tenSeconds)
 			{
 				if (CheckCollisionCircleRec(ballPosition, ballRadius, player1) || CheckCollisionCircleRec(ballPosition, ballRadius, player2))
 				{
@@ -83,12 +86,10 @@ namespace Game
 
 	void InitBall()
 	{
-		randBallPosition = rand() % 2;
-
-		ballPosition.x = static_cast<float>(screenWidth) / 2;
-		ballPosition.y = static_cast<float>(screenHeight) / 2;
-		ballSpeed.x = 0;
-		ballSpeed.y = 0;
+		ballPosition.x = (screenWidth) / 2;
+		ballPosition.y = (screenHeight) / 2;
+		ballSpeed.x = maxSpeedBall;
+		ballSpeed.y = maxSpeedBall;
 
 		ballRadius = initialRadius;
 	}
@@ -131,16 +132,16 @@ namespace Game
 			canDrawPowerBall = false;
 		}
 	}
-
+	 /*
 	void RandomBallSpeed()
 	{
 		ballSpeed.x = maxSpeedBall;
 		ballSpeed.y = maxSpeedBall;
-	}
+	}*/
 
 	void MoveBall()
 	{
-		ballPosition.x += ballPosition.x * GetFrameTime();
-		ballPosition.y += ballPosition.y * GetFrameTime();
+		ballPosition.x += ballSpeed.x;
+		ballPosition.y -= ballSpeed.y;
 	}
 }

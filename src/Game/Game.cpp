@@ -3,6 +3,7 @@
 #include "raylib.h"
 
 #include <iostream>
+using namespace std;
 
 #include "Initialize.h"
 #include "Menu.h"
@@ -12,23 +13,22 @@
 
 namespace Game
 {
-
 	bool stateGame = false;
 	bool stateMenu = true;
 	bool stateEndMenu = false;
 
-	float timer = 0;
+	static float timer = 0;
 
 	void GameLoop()
 	{
 		InitializeGlobal();
-		while (true)
+		while (!WindowShouldClose() && true)
 		{
 			if (stateMenu == true)
 			{
 				Menu();
 			}
-			if (stateGame == true)
+			while (stateGame == true)
 			{
 				Input();
 				Update();
@@ -38,7 +38,6 @@ namespace Game
 					stateMenu = false;
 					stateGame = false;
 					stateEndMenu = false;
-					CloseWindow();
 				}
 				timer++;
 			}
@@ -50,49 +49,6 @@ namespace Game
 		}
 		Unload();
 		EndDrawing();
+		cin.get();
 	}
 }
-	/*
-	void GameLoop()
-	{
-		InitializeGlobal();
-		while (true)
-		{
-			while (stateMenu == true)
-			{
-				Menu();
-			}
-			while (stateGame == true)
-			{
-				if (PVE == true)
-				{
-					AI();
-				}
-				else
-				{
-					Input();
-				}
-				Update();
-				Draw();
-				if (IsKeyDown(KEY_ESCAPE))
-				{
-					stateGame = false;
-					CloseWindow();
-				}
-				timer++;
-			}
-			while (stateEndMenu == true)
-			{
-				FinalMenu();
-			}*/
-			/*
-			if (IsKeyDown(KEY_ESCAPE))
-			{
-				break;
-			}*/
-		/*}
-		Unload();
-		EndDrawing();
-		std::cin.get();
-	}
-}*/
