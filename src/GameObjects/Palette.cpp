@@ -48,57 +48,6 @@ namespace Game
 		stateGame = true;
 		stateMenu = false;
 		stateEndMenu = false;
-		InitializeGamePVP();
-	}
-
-	void CollisionPlayerWithBall()
-	{
-		if (previusFrameCollisionP1)
-		{
-			lastCollisionFramesP1++;
-			if (lastCollisionFramesP1 >= dontCheckCollisionFrames)
-			{
-				lastCollisionFramesP1 = 0;
-				previusFrameCollisionP1 = false;
-			}
-		}
-
-
-		if (previusFrameCollisionP2)
-		{
-			lastCollisionFramesP2++;
-			if (lastCollisionFramesP2 >= dontCheckCollisionFrames)
-			{
-				lastCollisionFramesP2 = 0;
-				previusFrameCollisionP2 = false;
-			}
-		}
-
-		if (CheckCollisionCircleRec(ballPosition, (int)ballRadius, player1))
-		{
-			if (!previusFrameCollisionP1)
-			{
-				ballSpeed.x = ballSpeed.x * -1;
-				ballPosition.y += ballSpeed.y * -1;
-				colorBall = player1.color;
-				PlaySound(collisionWave);
-				previusFrameCollisionP1 = true;
-			}
-
-		}
-
-		if (CheckCollisionCircleRec(ballPosition, (int)ballRadius, player2))
-		{
-			if (!previusFrameCollisionP2)
-			{
-				ballSpeed.x = ballSpeed.x * -1;
-				ballPosition.y += ballSpeed.y * -1;
-				colorBall = player2.color;
-				PlaySound(collisionWave);
-				previusFrameCollisionP2 = true;
-
-			}
-		}
 	}
 
 	void PlayerGetPoints()

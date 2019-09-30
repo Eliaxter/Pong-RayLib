@@ -6,7 +6,6 @@ namespace Game
 	extern bool stateGame;
 	extern bool stateMenu;
 	extern bool stateEndMenu;
-	extern bool PVE;
 
 	void GameLoop();
 }

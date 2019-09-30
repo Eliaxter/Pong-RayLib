@@ -38,7 +38,6 @@ namespace Game
 	void Update();
 	void Draw();
 	void Input();
-	void AI();
 }
 
 #endif

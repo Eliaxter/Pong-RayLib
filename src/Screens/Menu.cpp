@@ -15,18 +15,17 @@ namespace Game
 		ClearBackground(BLACK);
 		DrawText("Play Pong Elias", 300, 160, 20, RAYWHITE);
 		DrawText("To play in mode PVP press Enter", 300, 180, 20, RAYWHITE);
-		DrawText("To play in mode PVE press E", 300, 200, 20, RAYWHITE);
 		UpdateMusicStream(bgMusic);
 		if (IsKeyDown(KEY_ENTER))
 		{
 			InitPlayerPointsMenu();
 			InitializeGamePVP();
-		}
-		if (IsKeyDown(KEY_E))
-		{
-			PVE = true;
-			InitPlayerPointsMenu();
-			InitializeGamePVE();
+			pointsP1 = startPoints;
+			pointsP2 = startPoints;
+			games = initialGames;
+			timer = 0.0f;
+			stateMenu = false;
+			stateGame = true;
 		}
 		EndDrawing();
 	}

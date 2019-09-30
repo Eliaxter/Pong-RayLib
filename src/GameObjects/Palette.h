@@ -17,7 +17,6 @@ namespace Game
 
 	void InitPlayers();
 	void InitPlayerPointsMenu();
-	void CollisionPlayerWithBall();
 	void PlayerGetPoints();
 	void PlayerPointsConditions();
 	void CheckPlayerWins();

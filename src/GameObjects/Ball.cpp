@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <time.h>
+using namespace std;
 
 #include "raylib.h"
 
@@ -9,12 +10,10 @@
 #include "Palette.h"
 #include "Collision.h"
 
-using namespace std;
-
 namespace Game
 {
-	const int minSpeedBall = 6 * 50;
-	const int maxSpeedBall = 7 * 50;
+	const int minSpeedBall = 6;
+	const int maxSpeedBall = 7;
 	float initialRadius = 20.0f;
 	float ballRadius;
 	float powerBallRadius = 15.0f;
@@ -86,8 +85,8 @@ namespace Game
 	{
 		randBallPosition = rand() % 2;
 
-		ballPosition.x = (float)screenWidth / 2;
-		ballPosition.y = (float)screenHeight / 2;
+		ballPosition.x = static_cast<float>(screenWidth) / 2;
+		ballPosition.y = static_cast<float>(screenHeight) / 2;
 		ballSpeed.x = 0;
 		ballSpeed.y = 0;
 
@@ -116,7 +115,7 @@ namespace Game
 
 	void DrawSecondPowerUP()
 	{
-		if (timer / (float)GetFPS() > 10.0f && !canDrawPowerBall)
+		if (timer / static_cast<float>(GetFPS()) > 10.0f && !canDrawPowerBall)
 		{
 			canDrawPowerBall = true;
 		}
@@ -141,7 +140,7 @@ namespace Game
 
 	void MoveBall()
 	{
-		ballPosition.x += ballSpeed.x * GetFrameTime();
-		ballPosition.y += ballSpeed.y * GetFrameTime();
+		ballPosition.x += ballPosition.x * GetFrameTime();
+		ballPosition.y += ballPosition.y * GetFrameTime();
 	}
 }

@@ -41,4 +41,54 @@ namespace Game
 			player2.y = 0;
 		}
 	}
+
+	void CollisionPlayerWithBall()
+	{
+		if (previusFrameCollisionP1)
+		{
+			lastCollisionFramesP1++;
+			if (lastCollisionFramesP1 >= dontCheckCollisionFrames)
+			{
+				lastCollisionFramesP1 = 0;
+				previusFrameCollisionP1 = false;
+			}
+		}
+
+
+		if (previusFrameCollisionP2)
+		{
+			lastCollisionFramesP2++;
+			if (lastCollisionFramesP2 >= dontCheckCollisionFrames)
+			{
+				lastCollisionFramesP2 = 0;
+				previusFrameCollisionP2 = false;
+			}
+		}
+
+		if (CheckCollisionCircleRec(ballPosition, (ballRadius), player1))
+		{
+			if (!previusFrameCollisionP1)
+			{
+				ballPosition.x *= -1 * GetFrameTime();
+				ballPosition.y *= -1;
+				colorBall = player1.color;
+				PlaySound(collisionWave);
+				previusFrameCollisionP1 = true;
+			}
+
+		}
+
+		if (CheckCollisionCircleRec(ballPosition, (ballRadius), player2))
+		{
+			if (!previusFrameCollisionP2)
+			{
+				ballPosition.x *= -1 * GetFrameTime();
+				ballPosition.y *= -1;
+				colorBall = player2.color;
+				PlaySound(collisionWave);
+				previusFrameCollisionP2 = true;
+
+			}
+		}
+	}
 }

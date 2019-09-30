@@ -11,5 +11,6 @@ namespace Game
 
 	void WindowCollision();
 	void WindowLimits();
+	void CollisionPlayerWithBall();
 }
 #endif

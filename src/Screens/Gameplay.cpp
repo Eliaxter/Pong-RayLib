@@ -71,11 +71,4 @@ namespace Game
 		if (IsKeyDown(KEY_UP)) player2.y -= speedPlayer2 * GetFrameTime();
 		if (IsKeyDown(KEY_DOWN)) player2.y += speedPlayer2 * GetFrameTime();
 	}
-
-	void AI()
-	{
-		if (IsKeyDown(KEY_W)) player1.y -= speedPlayer1 * GetFrameTime();
-		if (IsKeyDown(KEY_S)) player1.y += speedPlayer1 * GetFrameTime();
-		player2.y = ballPosition.y - 50;
-	}
 }

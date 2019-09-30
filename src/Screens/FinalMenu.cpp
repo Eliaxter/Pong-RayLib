@@ -21,13 +21,9 @@ namespace Game
 		{
 			pointsP1 = startPoints;
 			pointsP2 = startPoints;
-			if (PVE == true)
-			{
-				stateMenu = true;
-				stateEndMenu = false;
-				stateGame = false;
-				PVE = false;
-			}
+			stateMenu = true;
+			stateEndMenu = false;
+			stateGame = false;
 			StopMusicStream(bgMusic);
 
 		}
@@ -37,26 +33,17 @@ namespace Game
 			pointsP1 = startPoints;
 			pointsP2 = startPoints;
 			games = initialGames;
-			if (PVE == true)
-			{
-				stateMenu = false;
-				stateGame = true;
-				stateEndMenu = false;
-			}
-			else
-			{
-				stateMenu = false;
-				stateGame = true;
-				stateEndMenu = false;
-				PVE = false;
-			}
+			InitPlayers();
+			timer = 0.0f;
+			stateMenu = false;
+			stateGame = true;
+			stateEndMenu = false;
 		}
 		if (IsKeyDown(KEY_N))
 		{
 			stateMenu = false;
 			stateGame = false;
 			stateEndMenu = false;
-			PVE = false;
 			CloseWindow();
 		}
 		EndDrawing();
