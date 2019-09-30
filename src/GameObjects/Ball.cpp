@@ -135,8 +135,8 @@ namespace Game
 
 	void RandomBallSpeed()
 	{
-		ballSpeed.x = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall);
-		ballSpeed.y = minSpeedBall + rand() % (maxSpeedBall - minSpeedBall);
+		ballSpeed.x = maxSpeedBall;
+		ballSpeed.y = maxSpeedBall;
 	}
 
 	void MoveBall()

@@ -19,7 +19,7 @@ namespace Game
 		InitWindow(screenWidth, screenHeight, "Pong Elias");
 		InitAudioDevice();
 		bgMusic = LoadMusicStream("sounds/background-music.ogg");
-		collisionWave = LoadSound("sounds/dung.wav");
+		collisionWave = LoadSound("sounds/collision.wav");
 	}
 
 	void InitializeGamePVP()
