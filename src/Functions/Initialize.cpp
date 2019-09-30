@@ -18,7 +18,7 @@ namespace Game
 		srand(time(NULL));
 		InitWindow(screenWidth, screenHeight, "Pong Elias");
 		InitAudioDevice();
-		bgMusic = LoadMusicStream("sounds/background-music.ogg");
+		bgMusic = LoadMusicStream("sounds/bg-music-new.ogg");
 		collisionWave = LoadSound("sounds/collision.wav");
 	}
 
