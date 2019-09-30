@@ -20,8 +20,8 @@ namespace Game
 	const int player2X = 747;
 	const int player2Y = 200;
 
-	const float speedPlayer1 = 5.0f;
-	const float speedPlayer2 = 5.0f;
+	const float speedPlayer1 = 5.0f * 50.0f;
+	const float speedPlayer2 = 5.0f * 50.0f;
 
 	void InitPlayers()
 	{
@@ -74,7 +74,7 @@ namespace Game
 			}
 		}
 
-		if (CheckCollisionCircleRec(ballPosition, ballRadius, player1))
+		if (CheckCollisionCircleRec(ballPosition, (int)ballRadius, player1))
 		{
 			if (!previusFrameCollisionP1)
 			{
@@ -87,7 +87,7 @@ namespace Game
 
 		}
 
-		if (CheckCollisionCircleRec(ballPosition, ballRadius, player2))
+		if (CheckCollisionCircleRec(ballPosition, (int)ballRadius, player2))
 		{
 			if (!previusFrameCollisionP2)
 			{

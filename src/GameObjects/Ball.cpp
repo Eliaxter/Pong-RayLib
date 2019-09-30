@@ -13,8 +13,8 @@ using namespace std;
 
 namespace Game
 {
-	const int minSpeedBall = 6;
-	const int maxSpeedBall = 7;
+	const int minSpeedBall = 6 * 50;
+	const int maxSpeedBall = 7 * 50;
 	float initialRadius = 20.0f;
 	float ballRadius;
 	float powerBallRadius = 15.0f;
@@ -141,8 +141,7 @@ namespace Game
 
 	void MoveBall()
 	{
-		ballPosition.x += ballSpeed.x;
-		ballPosition.y -= ballSpeed.y;
+		ballPosition.x += ballSpeed.x * GetFrameTime();
+		ballPosition.y += ballSpeed.y * GetFrameTime();
 	}
 }
-
