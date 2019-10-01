@@ -12,8 +12,7 @@ using namespace std;
 
 namespace Game
 {
-	float minSpeedBall = 6;
-    float maxSpeedBall = 7.0f;
+    const float maxSpeedBall = 400.0f;
 	float initialRadius = 20.0f;
 	float ballRadius;
 	static float newRadius = 40.0f;
@@ -88,8 +87,7 @@ namespace Game
 	{
 		ballPosition.x = (screenWidth) / 2;
 		ballPosition.y = (screenHeight) / 2;
-		ballSpeed.x = maxSpeedBall;
-		ballSpeed.y = maxSpeedBall;
+		SetBallSpeed();
 
 		ballRadius = initialRadius;
 	}
@@ -132,16 +130,16 @@ namespace Game
 			canDrawPowerBall = false;
 		}
 	}
-	 /*
-	void RandomBallSpeed()
+	 
+	void SetBallSpeed()
 	{
 		ballSpeed.x = maxSpeedBall;
 		ballSpeed.y = maxSpeedBall;
-	}*/
+	}
 
 	void MoveBall()
 	{
-		ballPosition.x += ballSpeed.x;
-		ballPosition.y -= ballSpeed.y;
+		ballPosition.x += ballSpeed.x * GetFrameTime();
+		ballPosition.y -= ballSpeed.y * GetFrameTime();
 	}
 }

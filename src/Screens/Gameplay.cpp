@@ -54,22 +54,21 @@ namespace Game
 		BeginDrawing();
 		ClearBackground(BLACK);
 		DrawTexture(bgTexture, 0, 0, WHITE);
-		//DrawText(TextFormat("Player 1: %i", pointsP1), 10, 10, 20, BLACK);
-		DrawText(TextFormat("Player 1: %i", (int)ballPosition.y), 10, 10, 20, BLACK);
-		DrawText(TextFormat("Games: %i", games), 400, 10, 20, BLACK);
-		DrawText(TextFormat("Player 2: %i", pointsP2), 650, 10, 20, BLACK);
-		DrawCircle(ballPosition.x, ballPosition.y, ballRadius, colorBall);
+		DrawText(TextFormat("Player 1: %i", pointsP1), 10, 10, 20, WHITE);
+		DrawText(TextFormat("Games: %i", games), 400, 10, 20, WHITE);
+		DrawText(TextFormat("Player 2: %i", pointsP2), 650, 10, 20, WHITE);
+		DrawCircleV(ballPosition, ballRadius, colorBall);
 		DrawCircleV(powerBallPosition, powerBallRadius, WHITE);
 		DrawSecondPowerUP();
-		DrawTexture(p1, player1.x, player1.y, WHITE);
-		DrawTexture(p2, player2.x, player2.y, WHITE);
+		DrawTexture(p1, static_cast<int>(player1.x), static_cast<int>(player1.y), WHITE);
+		DrawTexture(p2, static_cast<int>(player2.x), static_cast<int>(player2.y), WHITE);
 	}
 
 	void Input()
 	{
-		if (IsKeyDown(KEY_W)) player1.y -= speedPlayer1;
-		if (IsKeyDown(KEY_S)) player1.y += speedPlayer1;
-		if (IsKeyDown(KEY_UP)) player2.y -= speedPlayer2;
-		if (IsKeyDown(KEY_DOWN)) player2.y += speedPlayer2;
+		if (IsKeyDown(KEY_W)) player1.y -= speedPlayer1 * GetFrameTime();
+		if (IsKeyDown(KEY_S)) player1.y += speedPlayer1 * GetFrameTime();
+		if (IsKeyDown(KEY_UP)) player2.y -= speedPlayer2 * GetFrameTime();
+		if (IsKeyDown(KEY_DOWN)) player2.y += speedPlayer2 * GetFrameTime();
 	}
 }

@@ -20,8 +20,8 @@ namespace Game
 	const int player2X = 747;
 	const int player2Y = 200;
 
-	const float speedPlayer1 = 5.0f;
-	const float speedPlayer2 = 5.0f;
+	const float speedPlayer1 = 500.0f;
+	const float speedPlayer2 = 500.0f;
 
 	void InitPlayers()
 	{
@@ -45,16 +45,12 @@ namespace Game
 		pointsP1 = startPoints;
 		pointsP2 = startPoints;
 		games = initialGames;
-		stateGame = true;
-		stateMenu = false;
-		stateEndMenu = false;
 	}
 
 	void PlayerGetPoints()
 	{
 		if (ballPosition.x > screenWidth)
 		{
-			InitBall();
 			ballPosition.x = (float)screenWidth / 2;
 			ballPosition.y = (float)screenHeight / 2;
 			pointsP1++;
@@ -62,7 +58,6 @@ namespace Game
 		}
 		if (ballPosition.x < screenBorderX)
 		{
-			InitBall();
 			ballPosition.x = (float)screenWidth / 2;
 			ballPosition.y = (float)screenHeight / 2;
 			pointsP2++;

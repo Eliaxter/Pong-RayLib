@@ -7,8 +7,8 @@
 
 namespace Game
 {
-	extern float minSpeedBall;
-	extern float maxSpeedBall;
+	extern const float minSpeedBall;
+	extern const float maxSpeedBall;
 	extern float initialRadius;
 	extern float ballRadius;
 	extern float powerBallRadius;
@@ -29,7 +29,7 @@ namespace Game
 	void InitPowerUp();
 	void InitSecondPowerUP();
 	void DrawSecondPowerUP();
-	//void RandomBallSpeed();
+	void SetBallSpeed();
 	void MoveBall();
 }
 

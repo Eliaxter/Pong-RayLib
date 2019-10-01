@@ -30,20 +30,6 @@ namespace Game
 		InitBall();
 		InitPowerUp();
 		InitSecondPowerUP();
-		//RandomBallSpeed();
-		ColorBall();
-		LoadImageBG();
-		LoadTextureBG();
-	}
-
-	void InitializeGamePVE()
-	{
-		SetTargetFPS(60);
-		PlayMusicStream(bgMusic);
-		InitPlayers();
-		InitPowerUp();
-		InitSecondPowerUP();
-		//RandomBallSpeed();
 		ColorBall();
 		LoadImageBG();
 		LoadTextureBG();

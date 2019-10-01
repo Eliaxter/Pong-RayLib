@@ -22,9 +22,9 @@ namespace Game
 	void GameLoop()
 	{
 		InitializeGlobal();
-		while (!WindowShouldClose() && true)
+		while (true)
 		{
-			if (stateMenu == true)
+			while (stateMenu == true)
 			{
 				Menu();
 			}
@@ -35,20 +35,21 @@ namespace Game
 				Draw();
 				if (IsKeyDown(KEY_ESCAPE))
 				{
-					stateMenu = false;
 					stateGame = false;
-					stateEndMenu = false;
 				}
 				timer++;
 			}
-			if (stateEndMenu == true)
+			while (stateEndMenu == true)
 			{
 				FinalMenu();
 			}
 
+			if (IsKeyDown(KEY_ESCAPE))
+			{
+				break;
+			}
 		}
 		Unload();
-		EndDrawing();
-		cin.get();
+		std::cin.get();
 	}
 }

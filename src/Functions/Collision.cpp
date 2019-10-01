@@ -82,8 +82,8 @@ namespace Game
 		{
 			if (!previusFrameCollisionP1)
 			{
-				ballSpeed.x = ballSpeed.x * -1.0f;
-				ballPosition.y += ballSpeed.y * -1.0f;
+				ballSpeed.x = ballSpeed.x * -1;
+				ballPosition.y += ballSpeed.y * -1;
 				colorBall = player1.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP1 = true;
@@ -93,14 +93,14 @@ namespace Game
 
 		if (CheckCollisionCircleRec(ballPosition, ballRadius, player2))
 		{
-			
 			if (!previusFrameCollisionP2)
 			{
-				ballSpeed.x = ballSpeed.x * -1.0f;
-				ballPosition.y += ballSpeed.y * -1.0f;
+				ballSpeed.x = ballSpeed.x * -1;
+				ballPosition.y += ballSpeed.y * -1;
 				colorBall = player2.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP2 = true;
+
 			}
 		}
 	}
