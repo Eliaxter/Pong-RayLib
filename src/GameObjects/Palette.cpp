@@ -23,19 +23,22 @@ namespace Game
 	const float speedPlayer1 = 500.0f;
 	const float speedPlayer2 = 500.0f;
 
+	static float widthPlayers = 25.0f;
+	static float heightPlayers = 100.0f;
+
 	void InitPlayers()
 	{
 		player1.x = player1X;
 		player1.y = player1Y;
-		player1.width = 25;
-		player1.height = 100;
+		player1.width = widthPlayers;
+		player1.height = heightPlayers;
 		player1.color = colors[rand() % 7];
 		p1 = LoadTexture("img/player1.png");
 
 		player2.x = player2X;
 		player2.y = player2Y;
-		player2.width = 25;
-		player2.height = 100;
+		player2.width = widthPlayers;
+		player2.height = heightPlayers;
 		player2.color = colors[rand() % 7];
 		p2 = LoadTexture("img/player2.png");
 	}

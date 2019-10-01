@@ -30,6 +30,8 @@ namespace Game
 	static float teleportPowerBall = -500.0f;
 	static bool canDrawPowerBall = false;
 
+	static float randomValue = 0.0f;
+
 	bool isTimeRunning = true;
 
 	Rectangle player1;
@@ -94,20 +96,20 @@ namespace Game
 
 	void InitPowerUp()
 	{
-		int random1 = 0;
+		float random1 = randomValue;
 		random1 = GetRandomValue(randomPowerUPW1, randomPowerUPW2);
 		powerBallPosition.x = random1;
-		int random2 = 0;
+		float random2 = randomValue;
 		random2 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
 		powerBallPosition.y = random2;
 	}
 
 	void InitSecondPowerUP()
 	{
-		float random3 = 0.0f;
+		float random3 = randomValue;
 		random3 = GetRandomValue(randomPowerUPW1, randomPowerUPW2);
 		secondPowerBallPosition.x = random3;
-		float random4 = 0.0f;
+		float random4 = randomValue;
 		random4 = GetRandomValue(randomPowerUPH1, randomPowerUPH2);
 		secondPowerBallPosition.y = random4;
 	}

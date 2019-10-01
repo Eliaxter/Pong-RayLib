@@ -82,8 +82,8 @@ namespace Game
 		{
 			if (!previusFrameCollisionP1)
 			{
-				ballSpeed.x = ballSpeed.x * -1;
-				ballPosition.y += ballSpeed.y * -1;
+				ballSpeed.x = ballSpeed.x * reverseSpeed;
+				ballPosition.y += ballSpeed.y * reverseSpeed;
 				colorBall = player1.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP1 = true;
@@ -95,8 +95,8 @@ namespace Game
 		{
 			if (!previusFrameCollisionP2)
 			{
-				ballSpeed.x = ballSpeed.x * -1;
-				ballPosition.y += ballSpeed.y * -1;
+				ballSpeed.x = ballSpeed.x * reverseSpeed;
+				ballPosition.y += ballSpeed.y * reverseSpeed;
 				colorBall = player2.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP2 = true;
