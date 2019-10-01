@@ -22,9 +22,6 @@ namespace Game
 		{
 			InitPlayerPointsMenu();
 			InitializeGamePVP();
-			pointsP1 = startPoints;
-			pointsP2 = startPoints;
-			games = initialGames;
 			timer = resetTimer;
 			stateMenu = false;
 			stateGame = true;

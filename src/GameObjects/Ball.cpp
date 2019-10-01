@@ -75,14 +75,14 @@ namespace Game
 	void ColorBall()
 	{
 		colorBall = WHITE;
-		colors[0] = BLACK;
+		colors[0] = ORANGE;
 		colors[1] = RED;
 		colors[2] = GREEN;
 		colors[3] = YELLOW;
 		colors[4] = PURPLE;
 		colors[5] = GOLD;
 		colors[6] = VIOLET;
-		colors[7] = DARKBROWN;
+		colors[7] = BROWN;
 	}
 
 	void InitBall()
@@ -123,7 +123,7 @@ namespace Game
 
 		if (canDrawPowerBall)
 		{
-			DrawCircleV(secondPowerBallPosition, secondPowerBallRadius, BLACK);
+			DrawCircleV(secondPowerBallPosition, secondPowerBallRadius, RED);
 		}
 
 		if (CheckCollisionCircles(secondPowerBallPosition, secondPowerBallRadius, ballPosition, ballRadius))

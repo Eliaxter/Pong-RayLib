@@ -18,19 +18,19 @@ namespace Game
 		srand(time(NULL));
 		InitWindow(screenWidth, screenHeight, "Pong Elias");
 		InitAudioDevice();
-		bgMusic = LoadMusicStream("sounds/bg-music-new.ogg");
-		collisionWave = LoadSound("sounds/collision.wav");
+		bgMusic = LoadMusicStream("assets/music/bg-music-new.ogg");
+		collisionWave = LoadSound("assets/sounds/collision.wav");
 	}
 
 	void InitializeGamePVP()
 	{
 		SetTargetFPS(60);
 		PlayMusicStream(bgMusic);
+		ColorBall();
 		InitPlayers();
 		InitBall();
 		InitPowerUp();
 		InitSecondPowerUP();
-		ColorBall();
 		LoadImageBG();
 		LoadTextureBG();
 	}

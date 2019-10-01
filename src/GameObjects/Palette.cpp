@@ -1,7 +1,6 @@
 #include "Palette.h"
 
 #include <iostream>
-#include <time.h>
 
 #include "raylib.h"
 
@@ -32,15 +31,15 @@ namespace Game
 		player1.y = player1Y;
 		player1.width = widthPlayers;
 		player1.height = heightPlayers;
-		player1.color = colors[rand() % 7];
-		p1 = LoadTexture("img/player1.png");
+		player1.color = colors[GetRandomValue(0, 7)];
+		p1 = LoadTexture("assets/img/player1.png");
 
 		player2.x = player2X;
 		player2.y = player2Y;
 		player2.width = widthPlayers;
 		player2.height = heightPlayers;
-		player2.color = colors[rand() % 7];
-		p2 = LoadTexture("img/player2.png");
+		player2.color = colors[GetRandomValue(0, 7)];
+		p2 = LoadTexture("assets/img/player2.png");
 	}
 
 	void InitPlayerPointsMenu()

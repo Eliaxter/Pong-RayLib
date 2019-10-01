@@ -1,6 +1,8 @@
 #include "Gameplay.h"
 
 #include "raylib.h"
+#include <iostream>
+using namespace std;
 
 #include "Palette.h"
 #include "Ball.h"

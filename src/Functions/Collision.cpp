@@ -8,7 +8,7 @@
 
 namespace Game
 {
-	const int dontCheckCollisionFrames = 5;
+	const int dontCheckCollisionFrames = 20;
 	bool previusFrameCollisionP1 = false;
 	int lastCollisionFramesP1 = 0;
 	bool previusFrameCollisionP2 = false;
@@ -82,8 +82,8 @@ namespace Game
 		{
 			if (!previusFrameCollisionP1)
 			{
-				ballSpeed.x = ballSpeed.x * reverseSpeed;
-				ballPosition.y += ballSpeed.y * reverseSpeed;
+				ballSpeed.x *= reverseSpeed;
+				//ballPosition.y += ballSpeed.y * reverseSpeed;
 				colorBall = player1.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP1 = true;
@@ -95,8 +95,8 @@ namespace Game
 		{
 			if (!previusFrameCollisionP2)
 			{
-				ballSpeed.x = ballSpeed.x * reverseSpeed;
-				ballPosition.y += ballSpeed.y * reverseSpeed;
+				ballSpeed.x *= reverseSpeed;
+				//ballPosition.y += ballSpeed.y * reverseSpeed;
 				colorBall = player2.color;
 				PlaySound(collisionWave);
 				previusFrameCollisionP2 = true;

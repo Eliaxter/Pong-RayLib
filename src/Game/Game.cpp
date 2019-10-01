@@ -24,11 +24,11 @@ namespace Game
 		InitializeGlobal();
 		while (true)
 		{
-			while (stateMenu == true)
+			if (stateMenu == true)
 			{
 				Menu();
 			}
-			while (stateGame == true)
+			if (stateGame == true)
 			{
 				Input();
 				Update();
@@ -39,17 +39,15 @@ namespace Game
 				}
 				timer++;
 			}
-			while (stateEndMenu == true)
+			if (stateEndMenu == true)
 			{
 				FinalMenu();
 			}
-
 			if (IsKeyDown(KEY_ESCAPE))
 			{
 				break;
 			}
 		}
 		Unload();
-		std::cin.get();
 	}
 }

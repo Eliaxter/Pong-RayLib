@@ -9,7 +9,7 @@ namespace Game
 
 	void LoadImageBG()
 	{
-		bgImage = LoadImage("img/bg.png");
+		bgImage = LoadImage("assets/img/bg.png");
 	}
 
 	void UnloadImage()
